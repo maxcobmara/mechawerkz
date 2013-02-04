@@ -122,6 +122,7 @@ authorization do
      #has_permission_on :addbooks, :to => :manage
   end
   
+  #126-127-4Feb2013-new role created
   role :service_support do
     has_permission_on :addbooks, :to => :manage
   end
