@@ -192,9 +192,8 @@
 			<%#= report_need_comment %> <%#= link_to "Lesson Plan Reports for your comment", trainingreports_path %><br>
 		<%# end %>
 	-->
-	
-	
-	
+
+	<!--4Feb2013-open up this part only-line 196-206-->
 	<!-- Notification for New User -->
 
 	<% permitted_to? :manage, :users do %>
@@ -204,9 +203,7 @@
 			<%= users_wo_roles %> <%= link_to "New users require authentication", users_path %><br/>
 		<% end %>
 	<% end %>
-
-
-	
+	<!--4Feb2013-open up this part only-line 196-206-->
 	
 	<!-- Overdue Library Books for Staff -->
 		<!-- hide 4Feb2013 
