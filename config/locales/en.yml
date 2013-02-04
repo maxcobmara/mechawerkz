@@ -111,6 +111,7 @@ en:
     phonehome: Telephone (H)
     poskod_id: Post Code
     address: Address
+    addr: Address
     mrtlstatuscd: Marital Status
     statecd: State of Birth
     race: Race
@@ -147,6 +148,8 @@ en:
     level_id: Level
     qname: Qualification
     institute: Institute
+
+    loans: Loans
 
     loan:
       loans: Loans

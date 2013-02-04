@@ -94,10 +94,11 @@
 			                 Staff::NATIONALITY,
 			                 :prompt => "Select" %></td>
 		</tr>
+		<!--4Feb2013 - hide lines 97-101
 		<tr>
 			<td class="leftcol"><label for="transportclass_id"><b>Transport Class</b></td>
-			<td><%= f.select :transportclass_id, options_for_select(('A'..'F').to_a, @staff.transportclass_id) %></td>
-		</tr>
+			<td><%#= f.select :transportclass_id, options_for_select(('A'..'F').to_a, @staff.transportclass_id) %></td>
+		</tr>-->
 		<tr>
 			<td class="leftcol"><label for="upload"><b><%= t 'staff.upload' %></b></label></td>
 			<td><%= f.file_field :photo %></td></tr>
@@ -107,46 +108,59 @@
  	
 <!--Employment Details-->
 	<table  width=100% >
+		<!--4Feb 2013 - hide lines 111-116
 		<tr>
 			<td class="leftcol"><label for="staffgrade_id"><b><%= t 'staff.staffgrade_id' %></b></label><font color="red"> * </font></td>
-			<td><%= f.collection_select :staffgrade_id, Employgrade.find(:all, :order => 'name'), :id, :name_and_group, :include_blank => true %></td>
-		</tr><!--#:conditions => ["id != ?",@travelrequest.treplace.id || @travelrequest.staffid.id]-->
+			<td><%#= f.collection_select :staffgrade_id, Employgrade.find(:all, :order => 'name'), :id, :name_and_group, :include_blank => true %></td>
+		</tr>
+		-->
+		<!--#:conditions => ["id != ?",@travelrequest.treplace.id || @travelrequest.staffid.id]-->
 		<tr>
 			<td class="leftcol"><label for="employstatus"><b><%= t 'staff.employstatus' %></b></label></td>
 			<td><%= f.select :employstatus, 
 			                  Staff::STATUS,
 			                 :prompt => "Select"  %></td>
 		</tr>
+		<!--4Feb 2013 - hide lines 124-131
 		<tr>
-			<td class="leftcol"><label for="appointstatus"><b><%= t 'staff.appointstatus' %></b></label></td>
-			<td><%= f.select :appointstatus, 
+			<td class="leftcol"><label for="appointstatus"><b><%#= t 'staff.appointstatus' %></b></label></td>
+			<td><%#= f.select :appointstatus, 
 			                  Staff::APPOINTMENT,
 			                 :prompt => "Select"  %></td>
 		</tr>
+		-->
 		<tr>
 			<td class="leftcol"><label for="appointdt"><b><%= t 'staff.appointdt' %></b></label></td>
 			<td><%= f.date_select :appointdt, :start_year => 1945, :end_year => 2020, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>
+		<!--4Feb 2013 - hide lines 136-141
 		<tr>
-			<td class="leftcol"><label for="schemedt"><b><%= t 'staff.schemedt' %></b></label></td>
-			<td><%= f.date_select :schemedt, :start_year => 1945, :end_year => 2020, :order => [:day, :month, :year], :include_blank => true %></td>
+			<td class="leftcol"><label for="schemedt"><b><%#= t 'staff.schemedt' %></b></label></td>
+			<td><%#= f.date_select :schemedt, :start_year => 1945, :end_year => 2020, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>
+		-->
 		<tr>
 			<td class="leftcol"><label for="confirmdt"><b><%= t 'staff.confirmdt' %></b></label></td>
 			<td><%= f.date_select :confirmdt, :start_year => 1945, :end_year => 2020, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>
+		<!--4Feb 2013 - hide lines 146-151
 		<tr>
-			<td class="leftcol"><label for="posconfirmdate"><b><%= t 'staff.posconfirmdate' %></b></label></td>
-			<td><%= f.date_select :posconfirmdate, :start_year => 1945, :end_year => 2020, :order => [:day, :month, :year], :include_blank => true %></td>
+			<td class="leftcol"><label for="posconfirmdate"><b><%#= t 'staff.posconfirmdate' %></b></label></td>
+			<td><%#= f.date_select :posconfirmdate, :start_year => 1945, :end_year => 2020, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>
+		-->
+		<!--4Feb 2013 - hide lines 152-157
 		<tr>
-			<td class="leftcol"><label for="pension_confirm_date"><b><%= t 'staff.pension_confirm_date' %></b></label></td>
-			<td><%= f.date_select :pension_confirm_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
+			<td class="leftcol"><label for="pension_confirm_date"><b><%#= t 'staff.pension_confirm_date' %></b></label></td>
+			<td><%#= f.date_select :pension_confirm_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>
+		-->
+		<!--4Feb 2013 - hide lines 158-163
 		<tr>
-			<td class="leftcol"><label for="wealth_decleration_date"><b><%= t 'staff.wealth_decleration_date' %></b></label></td>
-			<td><%= f.date_select :wealth_decleration_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
+			<td class="leftcol"><label for="wealth_decleration_date"><b><%#= t 'staff.wealth_decleration_date' %></b></label></td>
+			<td><%#= f.date_select :wealth_decleration_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>
+		-->
 		<tr>
 			<td class="leftcol"><label for="promotion_date"><b><%= t 'staff.promotion_date' %></b></label></td>
 			<td><%= f.date_select :promotion_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
@@ -155,49 +169,61 @@
 			<td class="leftcol"><label for="reconfirmation_date"><b><%= t 'staff.reconfirmation_date' %></b></label></td>
 			<td><%= f.date_select :reconfirmation_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>
-		<!--
+		<!-- hide lines 172-176
 		<tr>
-			<td class="leftcol"><label for="to_current_grade_date"><b><%= t 'staff.current_grade_date' %></b></label></td>
-			<td><#%= f.date_select :to_current_grade_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
+			<td class="leftcol"><label for="to_current_grade_date"><b><%#= t 'staff.current_grade_date' %></b></label></td>
+			<td><%#= f.date_select :to_current_grade_date, :start_year => 2000, :order => [:day, :month, :year], :include_blank => true %></td>
 		</tr>-->
 		<tr>
 			<td class="leftcol"><label for="starting_salary"><b><%= t 'staff.starting_salary' %></b></label></td>
 			<td><%= f.text_field :starting_salary, :size => 14 %></td>
 		</tr>
+		<!--4Feb 2013 - hide lines 181-188
 		<tr>
-			<td class="leftcol"><label for="appointby"><b><%= t 'staff.appointby' %></b></label></td>
-			<td><%= f.select :appointby, 
+			<td class="leftcol"><label for="appointby"><b><%#= t 'staff.appointby' %></b></label></td>
+			<td><%#= f.select :appointby, 
 			                  Staff::APPOINTED,
 			                 :prompt => "Select"  %></td>
 		</tr>	
+		-->
+		<!--4Feb 2013 - hide lines 189-196
 		<tr>
-			<td class="leftcol"><label for="svchead"><b><%= t 'staff.svchead' %></b></label></td>
-			<td><%= f.select :svchead, 
+			<td class="leftcol"><label for="svchead"><b><%#= t 'staff.svchead' %></b></label></td>
+			<td><%#= f.select :svchead, 
 			                  Staff::HOS,
 			                 :prompt => "Select"  %></td>
 		</tr>
+		-->
+		<!--4Feb 2013 - hide lines 197-204
 		<tr>
-			<td class="leftcol"><label for="svctype"><b><%= t 'staff.svctype' %></b></label></td>
-			<td><%= f.select :svctype, 
+			<td class="leftcol"><label for="svctype"><b><%#= t 'staff.svctype' %></b></label></td>
+			<td><%#= f.select :svctype, 
 			                  Staff::TOS,
 			                 :prompt => "Select"  %></td>
 		</tr>	
+		-->
+		<!--4Feb 2013 - hide lines 205-212
 		<tr>
-			<td class="leftcol"><label for="pensionstat"><b><%= t 'staff.pensionstat' %></b></label></td>
-			<td><%= f.select :pensionstat, 
+			<td class="leftcol"><label for="pensionstat"><b><%#= t 'staff.pensionstat' %></b></label></td>
+			<td><%#= f.select :pensionstat, 
 			                  Staff::PENSION,
 			                 :prompt => "Select"  %></td>
 		</tr>
+		-->
+		<!--4Feb 2013 - hide lines 213-218
 		<tr>
-			<td class="leftcol"><label for="pensiondt"><b><%= t 'staff.pensiondt' %></b></label></td>
-			<td><%= f.date_select :pensiondt, :start_year => 2010, :end_year => 2050, :order => [:day, :month, :year] %></td>
+			<td class="leftcol"><label for="pensiondt"><b><%#= t 'staff.pensiondt' %></b></label></td>
+			<td><%#= f.date_select :pensiondt, :start_year => 2010, :end_year => 2050, :order => [:day, :month, :year] %></td>
 		</tr>	
+		-->
+		<!--4Feb 2013 - hide lines 219-226
 		<tr>
-			<td class="leftcol"><label for="uniformstat"><b><%= t 'staff.uniformstat' %></b></label></td>
-			<td><%= f.select :uniformstat, 
+			<td class="leftcol"><label for="uniformstat"><b><%#= t 'staff.uniformstat' %></b></label></td>
+			<td><%#= f.select :uniformstat, 
 			                  Staff::UNIFORM,
 			                 :prompt => "Select"  %></td>
 		</tr>
+		-->
 	</table>
 	
 
