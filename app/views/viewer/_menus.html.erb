@@ -8,13 +8,13 @@
 	</li>
 	
 	<!-- Staff Menu -->
-	<!--
-	<%# permitted_to? :menu, :staffs do %>-->
+	
+	<% permitted_to? :menu, :staffs do %>
   	<li><a href="#">Staff</a>
 			<ul class="sub_menu">
-			<!--
-				<li><%#= link_to 'Staff Information', 	{:controller => 'staffs', 			:action => 'index'} %></li>
-				
+	
+				<li><%= link_to 'Staff Information', 	{:controller => 'staffs', 			:action => 'index'} %></li>
+			<!--	
 				<li><a href="#">Attendance ></a>
 						<ul class="sub_menu">
 								<li><%#= link_to 'Manage.', 						{:controller => 'staff_attendances', 	:action => 'manage'} %></li>
@@ -73,9 +73,9 @@
 				-->
 			</ul>
 		</li>
-	<!--	
-	<%# end %>
-	-->
+	
+	<% end %>
+
 	 
 	<!-- Asset Menu -->
 	<!--
@@ -265,18 +265,24 @@
 	</li>-->
 	
 	<!-- Administration Menu -->
-	<!--
-	<%# permitted_to? :core, :roles do %>-->
+
+	<%# permitted_to? :core, :roles do %>
+	<% permitted_to? :manage, :addbooks do %><!--4Feb2013-temp-use of least condition-->
 	<li><a href="#">Administration</a>
-			<ul class="sub_menu"><!--
-				
-				<li><%#= link_to 'Users',   				{:controller => 'users', 	:action => 'index'} %></li>
-				<li><%#= link_to 'Roles',   				{:controller => 'roles', 	:action => 'index'} %></li>
-				<li><%#= link_to 'Pages',   				{:controller => 'pages', 	:action => 'index'} %></li>
-				-->
-				
+			<ul class="sub_menu">
+				<% permitted_to? :core, :roles do %>
+					<li><%= link_to 'Users',   				{:controller => 'users', 	:action => 'index'} %></li>
+					<li><%= link_to 'Roles',   				{:controller => 'roles', 	:action => 'index'} %></li>
+					<!--
+					<li><%#= link_to 'Pages',   				{:controller => 'pages', 	:action => 'index'} %></li>
+					-->
+				<% end %>
+			
+				<!---->
 				<li><%= link_to 'Address Book',   {:controller => 'addbooks', :action => 'index'} %></li>
+				<!---->
 				
+				<!--hide 4 feb 2013-->
 				<!--
 				<li><a href="#">Support Tables ></a>
 					<ul class="sub_menu">
@@ -293,8 +299,9 @@
 			-->
 			</ul>
 			<!--
-	</li>
-	<%# end %>	
+	</li>-->
+	<% end %><!--hide 4Feb2013-->
+<!--
 </ul>-->
 				
 

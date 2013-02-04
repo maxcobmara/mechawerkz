@@ -20,7 +20,7 @@ class Staff < ActiveRecord::Base
   validates_presence_of     :icno, :name, :coemail, :code
   validates_uniqueness_of   :icno, :fileno, :coemail, :code
   validates_format_of       :name, :with => /^[a-zA-Z'` ]+$/, :message => "contains illegal characters" #add unwanted chars between bracket
-  validates_presence_of     :cobirthdt, :addr, :poskod_id, :staffgrade_id, :statecd, :country_cd, :fileno
+  validates_presence_of     :cobirthdt, :addr, :poskod_id, :statecd, :country_cd, :fileno#, :staffgrade_id, --> 4Feb2013
   #validates_length_of      :cooftelno, :is =>10
   #validates_length_of      :cooftelext, :is =>5
   validates_length_of       :addr, :within => 1..180,:too_long => "Address Too Long"

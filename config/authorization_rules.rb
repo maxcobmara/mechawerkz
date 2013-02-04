@@ -119,6 +119,11 @@ authorization do
   
   role :staff_administrator do
      has_permission_on :staffs, :to => [:manage, :borang_maklumat_staff]
+     #has_permission_on :addbooks, :to => :manage
+  end
+  
+  role :service_support do
+    has_permission_on :addbooks, :to => :manage
   end
   
   role :finance_unit do
