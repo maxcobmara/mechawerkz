@@ -12,7 +12,7 @@
 	<% permitted_to? :menu, :staffs do %>
   	<li><a href="#">Staff</a>
 			<ul class="sub_menu">
-	
+				<!--4Feb2013-Open up menu item for Staff Information-->
 				<li><%= link_to 'Staff Information', 	{:controller => 'staffs', 			:action => 'index'} %></li>
 			<!--	
 				<li><a href="#">Attendance ></a>
@@ -265,9 +265,10 @@
 	</li>-->
 	
 	<!-- Administration Menu -->
-
+	
+	<!--4Feb2013-temp-use of least condition-line 269-83-->
 	<%# permitted_to? :core, :roles do %>
-	<% permitted_to? :manage, :addbooks do %><!--4Feb2013-temp-use of least condition-->
+	<% permitted_to? :manage, :addbooks do %>
 	<li><a href="#">Administration</a>
 			<ul class="sub_menu">
 				<% permitted_to? :core, :roles do %>
@@ -300,7 +301,7 @@
 			</ul>
 			<!--
 	</li>-->
-	<% end %><!--hide 4Feb2013-->
+	<% end %>  <!--hide 4Feb2013-line 304-->
 <!--
 </ul>-->
 				
