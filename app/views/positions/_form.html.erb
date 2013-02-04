@@ -13,9 +13,9 @@
 		<td class="leftcol"><label for="parent_id"><b><%= t 'positions.parent_id' %></b></label></td>
 		<td><#%= f.collection_select :parent_id, Position.find(:all), :id, :position_with_code, :include_blank => true %></td>
 	</tr>-->
-	<!--
+	<!--4Feb2013-hide minimum grade required for a position - line 16-20
 	<tr>
-		<td class="leftcol"><label for="staffgrade_id"><b><%= t 'positions.grade_id' %></b></label></td>
+		<td class="leftcol"><label for="staffgrade_id"><b><%#= t 'positions.grade_id' %></b></label></td>
 		<td><%#= f.collection_select :staffgrade_id, Employgrade.find(:all, :order => 'name'), :id, :name_and_group, :include_blank => true %></td>
 	</tr>-->
 	
