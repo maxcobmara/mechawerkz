@@ -8,21 +8,25 @@
 		<tr>
 			<td class="leftcol"><label for="name"><b><%= t 'staff.name' %></b></label><font color="red"> * </font></td>
 			<td><%= f.collection_select :titlecd_id, Title.find(:all), :id, :name, :include_blank => true %><%= f.text_field :name %></td>
-		</tr>	
-		<tr>
-			<td class="leftcol"><label for="code"><b><%= t 'staff.code' %></b></label><font color="red"> * </font></td>
-			<td><%= f.text_field :code %></td>
 		</tr>
+		<!--	
 		<tr>
+			<td class="leftcol"><label for="code"><b><%#= t 'staff.code' %></b></label><font color="red"> * </font></td>
+			<td><%#= f.text_field :code %></td>
+		</tr>-->
+		
+		<!--<tr>
 			<td class="leftcol"><label for="code">Thumb ID</td>
-			<td><%= f.text_field :thumb_id %></td>
+			<td><%#= f.text_field :thumb_id %></td>
 		</tr>
+		-->
+		<!--
 		<tr>
-			<td class="leftcol"><label for="fileno"><b><%= t 'staff.fileno' %></b></label><font color="red"> * </font></td>
-			<td><%= f.text_field :fileno %></td>
-		</tr>
+			<td class="leftcol"><label for="fileno"><b><%#= t 'staff.fileno' %></b></label><font color="red"> * </font></td>
+			<td><#%= f.text_field :fileno %></td>
+		</tr>-->
 		<tr>
-			<td class="leftcol"><label for="coemail"><b><%= t 'staff.coemail' %></b></label><font color="red"> * </font></td>
+			<td class="leftcol"><label for="coemail"><b><%= t 'staff.coemail' %></b></label><!--<font color="red"> * </font>--></td>
 			<td><%= f.text_field :coemail %></td>
 		</tr>
 		<tr>
@@ -58,11 +62,11 @@
 			<td><%= f.text_field :phonehome, :size => 14 %></td>
 		</tr>
 		<tr>
-			<td class="leftcol"><label for="addr"><b><%= t 'staff.address' %></b></label><font color="red"> * </font></td>
+			<td class="leftcol"><label for="addr"><b><%= t 'staff.address' %></b></label><!--<font color="red"> * </font>--></td>
 			<td><%= f.text_area :addr, :size => "40x5" %></td>
 		</tr>
 		<tr>
-			<td class="leftcol"><label for="poskod_id"><b><%= t 'staff.poskod_id' %></b></label><font color="red"> * </font></td>
+			<td class="leftcol"><label for="poskod_id"><b><%= t 'staff.poskod_id' %></b></label><!--<font color="red"> * </font>--></td>
 			<td><%= f.text_field :poskod_id %></td></tr>
 		<tr>
 			<td class="leftcol"><label for="mrtlstatuscd"><b><%= t 'staff.mrtlstatuscd' %></b></label></td>
@@ -71,7 +75,7 @@
 			                 :prompt => "Select"  %></td>
 		</tr>
 		<tr>
-			<td class="leftcol"><label for="statecd"><b><%= t 'staff.statecd' %></b></label><font color="red"> * </font></td>
+			<td class="leftcol"><label for="statecd"><b><%= t 'staff.statecd' %></b></label><!--<font color="red"> * </font>--></td>
 			<td><%= f.select :statecd, 
 			                  Staff::STATECD,
 			                 :prompt => "Select"  %></td>
@@ -89,7 +93,7 @@
 			                 :prompt => "Select"  %></td>
 		</tr>
 		<tr>
-			<td class="leftcol"><label for="country_cd"><b><%= t 'staff.country_cd' %></b></label><font color="red"> * </font></td>
+			<td class="leftcol"><label for="country_cd"><b><%= t 'staff.country_cd' %></b></label><!--<font color="red"> * </font>--></td>
 			<td><%= f.select :country_cd, 
 			                 Staff::NATIONALITY,
 			                 :prompt => "Select" %></td>

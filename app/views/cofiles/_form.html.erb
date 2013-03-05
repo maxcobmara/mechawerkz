@@ -1,27 +1,69 @@
-<div class="tform">
+<!--<div class="tform">-->
 	<H2>Files Details</H2>
-  <table width=100% >	
+ <!-- <table width=100% >	-->
 			
 			<tr>
-				<td class="leftcol"><label for="cofileno"><b><%= t 'cofile.cofileno' %> :</b></label><font color="red"> * </font></td>
-				<td>()KSKBJB/<%= f.text_field :cofileno %></td>
+				<td class="leftcol"><label for="cofileno"><b><%= t 'cofile.cofileno' %> :</b></label></td>
+				<td><%= f.text_field :cofileno %></td>
 			</tr>
 				
 			<tr>
 				<td class="leftcol"><label for="name"><b><%= t 'cofile.name' %> :</b></label><font color="red"> * </font></td>
 				<td><%= f.text_field :name %></td>
 			</tr>
-	
+			<!--19 Feb2013-add-in company name-->	
 			<tr>
-				<td class="leftcol"><label for="location"><b><%= t 'cofile.location' %> :</b></label><font color="red"> * </font></td>
-				<td><%= f.text_field :location %></td>
+				<td class="leftcol"><label for="company"><b><%= t 'cofile.company' %> :</b></label><font color="red"> * </font></td>
+				<td>
+					<% @aaaa1=[]%>
+					<% Addbook.all.group_by { |t| t.name }.each do |name, addbooks| %>
+						<% addbooks.each_with_index do |addbook,index| %>
+							<% if index==0%>
+								<% @aaaa1 << addbook %>
+							<% end %>
+						<% end %>
+					<% end %>
+					<%= f.collection_select :company, @aaaa1, :id, :name, {:include_blank => true} %>
+				</td>
 			</tr>
-	
-	
+			<!--19 Feb2013-add-in company name-->
+			<tr>
+				<td class="leftcol"><label for="location"><b><%= t 'cofile.location' %> :</b></label><!--<font color="red"> * </font>--></td>
+				<td>
+					<!--15Feb2013-use of location-coded list-->
+					<!--ref:http://stackoverflow.com/questions/623458/rails-select-helper-default-selected-value-how-->
+					<%#= f.select :location, Cofile::LOCATION,:prompt => "Select" %><%#= f.text_field :location %>	
+					<%= f.select :location, Cofile::LOCATION,:selected => @cofile.location.to_i, :include_blank => true %>
+					<!--15Feb2013-use of location-coded list-->
+				</td>
+			</tr>
+			<!--19 Feb2013-add-in company name-->
+			
+			<!--19 Feb2013-add-in division-file colors are determined by division REASONS:-->
+			<!--because 1 staff may handle more than 1 department-->
+			<!--because 1 location may have more than 1 division whereby each division handled by different personel-->
+			<!--cannot use by owner-staff may change at any time-->
+			<tr>
+				<td class="leftcol"><label for="division"><b><%= t 'cofile.division' %> :</b></label><font color="red"> * </font></td>
+				<td>
+					<!--15Feb2013-use of location-coded list-->
+					<!--ref:http://stackoverflow.com/questions/623458/rails-select-helper-default-selected-value-how-->	
+					<%= f.select :division, Cofile::DIVISION,:selected => @cofile.division.to_i, :include_blank => true %>
+					<!--15Feb2013-use of location-coded list-->
+				</td>
+			</tr>
+			<!--19 Feb2013-add-in division-file colors-->
 	<tr>
-		<td class="leftcol"><label for="owner_id"><b><%= t 'cofile.owner' %> :</b></label><font color="red"> * </font></td>
-	<td><%= f.collection_select :owner_id, Staff.find(:all), :id, :mykad_with_staff_name, :include_blank => true %></td>
+		<td class="leftcol"><label for="owner_id"><b><%= t 'cofile.owner' %> :</b></label><!--<font color="red"> * </font>--></td>
+	<td><!--15Feb2013 display name only--><%= f.collection_select :owner_id, Staff.find(:all), :id, :name, :prompt => "Please select", :include_blank => true %><%#= f.collection_select :owner_id, Staff.find(:all), :id, :mykad_with_staff_name, :include_blank => true %></td>
 	</tr>
+	<!--15Feb2013-add-in remark-->
+	<tr>
+		<td class="leftcol"><label for="remark"><b><%= t 'cofile.remark' %> :</b></label></td>
+	<td><%= f.text_field :remark %>
+		</td>
+	</tr>
+	<!--15Feb2013-add-in remark-->
 	<script type="text/javascript">
 	  function switchvisibility(el) {
 	    if (document.getElementById(el).checked) {
@@ -35,6 +77,7 @@
 	    }
 	  }
 	</script>
+	<% unless @cofile.onloan==true %><!--19Feb2013-this line added for viewing of SELECTED onloan details in EDIT page-->
 	<tr>
 		<td class="leftcol"><label for="onloan"><b><%= t 'cofile.onloan' %> :</b></label></td>
 		<td><%= f.check_box :onloan, :id => "fileborrow", :onchange => "switchvisibility('fileborrow')" %></td>
@@ -53,6 +96,27 @@
 		<td class="leftcol"><label for="onloanxdt"><b><%= t 'cofile.onloanxdt' %> :</b></label></td>
 		<td><%= f.date_select :onloanxdt, :order => [:day, :month, :year], :include_blank => true %></td>
 	</tr>
+	<% else %><!--19Feb2013-this line added for viewing of SELECTED onloan details in EDIT page-->
+		<!--additional on 19Feb2013-->
+		<tr>
+			<td class="leftcol"><label for="onloan"><b><%= t 'cofile.onloan' %> :</b></label></td>
+			<td><%= f.check_box :onloan, :id => "fileborrow", :onchange => "switchvisibility('fileborrow')" %></td>
+		</tr>
+		<tr id="borrower" style="display: table-row;">
+			<td class="leftcol" ><label for="staffloan_id"><b><%= t 'cofile.onloan_to' %> :</b></label></td>
+			<td><%= f.collection_select :staffloan_id, Staff.find(:all), :id, :name, :include_blank => true %></td>
+			<!--, :conditions => ["id != ?", @cofile.owner.id ]!-->
+		</tr>
+		<tr id="loaneddate" style="display: table-row;">
+			<td class="leftcol"><label for="onloandt"><b><%= t 'cofile.onloandt' %> :</b></label></td>
+			<td><%= f.date_select :onloandt, :order => [:day, :month, :year], :include_blank => true %></td>
+		</tr>
+		<tr id="returneddate" style="display: table-row;">
+			<td class="leftcol"><label for="onloanxdt"><b><%= t 'cofile.onloanxdt' %> :</b></label></td>
+			<td><%= f.date_select :onloanxdt, :order => [:day, :month, :year], :include_blank => true %></td>
+		</tr>
+		<!--additional on 19Feb2013-->
+	<% end %><!--19Feb2013-this line added for viewing of SELECTED onloan details in EDIT page-->
 	
-</table>
+<!--</table>-->
 <BR>

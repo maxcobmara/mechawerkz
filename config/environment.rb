@@ -15,8 +15,8 @@ Rails::Initializer.run do |config|
   #     require "ruport/acts_as_reportable"
   #end
   
-  #config.gem 'will_paginate', :version => '~> 2.3.16'
-  config.gem "mislav-will_paginate", :lib => "will_paginate", :source => "http://gems.github.com"
+  config.gem 'will_paginate', :version => '~> 2.3.16'
+  #config.gem "mislav-will_paginate", :lib => "will_paginate", :source => "http://gems.github.com"
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
@@ -28,7 +28,12 @@ Rails::Initializer.run do |config|
   
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "ancestry"
-
+  config.gem "nokogiri"
+  config.gem "builder"
+  #config.gem "google-spreadsheet-ruby"
+  config.gem "spreadsheet"
+  config.gem "roo"
+  
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

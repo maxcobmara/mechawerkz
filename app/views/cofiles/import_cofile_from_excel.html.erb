@@ -1,0 +1,26 @@
+<h3><%= t('cofile.import_data_from_excel_file') %></h3>
+<%= form_tag({:action => 'import_excel'}, :multipart => true) %>
+
+<div class="tform">
+<h2>Excel file details</h2>
+<!--21Feb2013-modified accordingly-->
+<table>
+  <tr><td colspan=2><b><%= label_tag t('cofile.file_to_import') %>:</b></td></tr>
+  <tr>
+    <td><%= file_field_tag 'excel_file', :size => 25 %>&nbsp;&nbsp;</td>
+	<td>
+		<i><b><%= t('cofile.supported_file_type') %></b> : (.xls, .xlsx, .ods) &nbsp;&nbsp;</i>
+		<br><i><b><%= t('cofile.standard_format') %></b> :   		
+			<%=link_to t('cofile.filling_sample'),'/public/data/standard_format/Filing_format.xls', :action => 'download_comp_format' %>  
+			<%= hidden_field_tag 'product_type','2' %>
+	</td>
+  </tr>
+  <tr><td colspan=2><i>Please provide spreadsheet data in supported file type, according to it's standard format.</i></td></tr> 
+</table>
+<p>
+<%= submit_tag t('cofile.import_data') %>
+</p>
+<!--21Feb2013-modified accordingly-->
+</form>
+<p><b><%= link_to t('cofile.file_registry_listing'), cofiles_path %><b></p>
+</div>

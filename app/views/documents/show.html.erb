@@ -1,4 +1,5 @@
 <%= render 'show' %>
-
-<%= link_to (t 'icms.update'), edit_document_path(@document) %> |
+<% unless @document.closed == true %><!--7Feb2013-display edit link when closed != true-->
+	<%= link_to (t 'icms.update'), edit_document_path(@document) %> |
+<% end %>
 <%= link_to (t 'icms.back'), documents_path %>

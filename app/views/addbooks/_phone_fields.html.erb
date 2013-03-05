@@ -1,0 +1,14 @@
+<div class="fields">
+<!--ref:development/icms/app/views/exammakers/_form.html.erb-15Feb2013-data retrieved from db of type integer-failed to be compared with coded list value..has to be in string type-->
+	<%#= (Phone::PHONETYPE.find_all{|disp, value| value == @addbook.phones[0].phone_type.to_s}).map {|disp, value| disp} %>
+	<%#= (Phone::PHONETYPE.find_all{|disp, value| value == 4.to_s}).map {|disp, value| disp} %>
+	<%#= select_tag "exammaker[examtype]", "<option></option>" + options_for_select(Exammaker::EXAMTYPE,@exammaker.examtype) %>
+	<%#= select_tag "addbook[phones][][phone_type]", "<option>Select type</option>" + options_for_select(Phone::PHONETYPE, @addbook.phones[count].phone_type.to_s) %>
+<!--ref:development/icms/app/views/exammakers/_form.html.erb-15Feb2013-data retrieved from db of type integer-failed to be compared with coded list value..has to be in string type-->
+	|	<%= f.select :phone_type, Phone::PHONETYPE, :prompt => "Select"  %>
+	|	<%= f.text_field :phone_no, :size => 40, :placeholder => 'Enter phone no' %>
+	<%= f.hidden_field :_destroy %>
+	<%= link_to_remove_fields image_tag("delete.png", :border => 0, :title => 'Remove'), f %>  
+
+</div>
+

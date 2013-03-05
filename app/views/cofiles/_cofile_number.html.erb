@@ -1,0 +1,1727 @@
+<tr>
+	<td class="leftcol"><label for="cofileno"><b><%= t 'cofile.international_code' %> :</b></label><!--21feb2013-<font color="red"> * </font>--></td>
+	<td>
+		<!--23&24Feb2013-ASSIGN data of main_class & sub_class for EDIT pg-->
+		
+		<% unless @cofile.cofile_code.nil? && @cofile.classification.nil? %>
+			<%#= @cofile.cofile_code %><%#= @cofile.classification %>
+				
+				<%# if (@cofile.classification.to_s  =~ /1(.*)/ )%><!--revised 26Feb2013-->
+				<% if (@cofile.classification==101||@cofile.classification==102||@cofile.classification==103||@cofile.classification==104||
+					@cofile.classification==105||@cofile.classification==106||@cofile.classification==107||@cofile.classification==108||
+					@cofile.classification==109||@cofile.classification==110||@cofile.classification==111||@cofile.classification==112 ) %>
+					<% @mainclass=1 %>
+					<% @subclass1_div='block' %>
+					<% @subclass2_div='none' %>
+					<% @subclass3_div='none' %>
+					<% @subclass4_div='none' %>
+					<% @subclass5_div='none' %>
+					<% @subclass6_div='none' %>
+					<% @subclass8_div='none' %>
+					<% @subclass9_div='none' %>
+				<%# elsif (@cofile.classification.to_s  =~ /2(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==201||@cofile.classification==202||@cofile.classification==203||@cofile.classification==204||
+					@cofile.classification==205||@cofile.classification==206||@cofile.classification==207||@cofile.classification==208||
+					@cofile.classification==209||@cofile.classification==210||@cofile.classification==211||@cofile.classification==212||
+					@cofile.classification==213||@cofile.classification==214||@cofile.classification==215||@cofile.classification==216||
+					@cofile.classification==217||@cofile.classification==218||@cofile.classification==219||@cofile.classification==220 ) %>
+					<% @mainclass=2 %>
+					<% @subclass2_div='block' %>
+					<% @subclass1_div='none' %>
+					<% @subclass3_div='none' %>
+					<% @subclass4_div='none' %>
+					<% @subclass5_div='none' %>
+					<% @subclass6_div='none' %>
+					<% @subclass8_div='none' %>
+					<% @subclass9_div='none' %>
+				<%# elsif (@cofile.classification.to_s  =~ /3(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==301||@cofile.classification==305||@cofile.classification==306 ) %>
+					<% @mainclass=3 %>
+					<% @subclass3_div='block' %>
+					<% @subclass1_div='none' %>
+					<% @subclass2_div='none' %>
+					<% @subclass4_div='none' %>
+					<% @subclass5_div='none' %>
+					<% @subclass6_div='none' %>
+					<% @subclass8_div='none' %>
+					<% @subclass9_div='none' %>
+				<%# elsif (@cofile.classification.to_s  =~ /4(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==401||@cofile.classification==402||@cofile.classification==403||@cofile.classification==404||
+					@cofile.classification==405||@cofile.classification==406||@cofile.classification==407||@cofile.classification==408||
+					@cofile.classification==409||@cofile.classification==410||@cofile.classification==411||@cofile.classification==420||
+					@cofile.classification==421||@cofile.classification==422||@cofile.classification==423||@cofile.classification==430||
+					@cofile.classification==431||@cofile.classification==440||@cofile.classification==441||@cofile.classification==442|| 
+					@cofile.classification==443||@cofile.classification==450||@cofile.classification==451||@cofile.classification==452||
+					@cofile.classification==499) %>
+					<%@mainclass=4 %>
+					<% @subclass4_div='block' %>
+					<% @subclass1_div='none' %>
+					<% @subclass2_div='none' %>
+					<% @subclass3_div='none' %>
+					<% @subclass5_div='none' %>
+					<% @subclass6_div='none' %>
+					<% @subclass8_div='none' %>
+					<% @subclass9_div='none' %>
+				<%# elsif (@cofile.classification.to_s  =~ /5(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==501||@cofile.classification==502||@cofile.classification==503||@cofile.classification==516||
+					@cofile.classification==520||@cofile.classification==521||@cofile.classification==522||@cofile.classification==550 )%>
+					<% @mainclass=5 %>
+					<% @subclass5_div='block' %>
+					<% @subclass1_div='none' %>
+					<% @subclass2_div='none' %>
+					<% @subclass3_div='none' %>
+					<% @subclass4_div='none' %>
+					<% @subclass6_div='none' %>
+					<% @subclass8_div='none' %>
+					<% @subclass9_div='none' %>
+				<%# elsif (@cofile.classification.to_s  =~ /6(.*)/ ) %>
+				<% elsif @cofile.classification == 6 %><!--revised 26Feb2013-->
+					<% @mainclass=6 %>
+					<%# @subclass6_div='block' %>
+					<% @subclass1_div='none' %>
+					<% @subclass2_div='none' %>
+					<% @subclass3_div='none' %>
+					<% @subclass4_div='none' %>
+					<% @subclass5_div='none' %>
+					<% @subclass8_div='none' %>
+					<% @subclass9_div='none' %>
+				<%# elsif (@cofile.classification.to_s  =~ /8(.*)/ )  %>
+				<% elsif @cofile.classification == 8 %><!--revised 26Feb2013-->
+					<% @mainclass=8 %>
+					<%# @subclass8_div='block' %>
+					<% @subclass1_div='none' %>
+					<% @subclass2_div='none' %>
+					<% @subclass3_div='none' %>
+					<% @subclass5_div='none' %>
+					<% @subclass6_div='none' %>
+					<% @subclass4_div='none' %>
+					<% @subclass9_div='none' %>
+				<%# elsif (@cofile.classification.to_s  =~ /9(.*)/ ) %>
+				<% elsif @cofile.classification == 9 %><!--revised 26Feb2013-->
+					<% @mainclass=9 %>
+					<%# @subclass9_div='block' %><!--26Feb2013-amended-->
+					<% @subclass1_div='none' %>
+					<% @subclass2_div='none' %>
+					<% @subclass3_div='none' %>
+					<% @subclass5_div='none' %>
+					<% @subclass6_div='none' %>
+					<% @subclass8_div='none' %>
+					<% @subclass4_div='none' %>
+				<% end %>
+				
+				<!--have to include this to OVERIDE value of @mainclass=1 when classification == 201-->
+				<%# if @cofile.classification == 201 || @cofile.classification == '201' %>
+					<%# @mainclass=2 %>
+					<%# @subclass2_div='block' %>
+					<%# @subclass1_div='none' %>
+					<%# @subclass3_div='none' %>
+					<%# @subclass4_div='none' %>
+					<%# @subclass5_div='none' %>
+					<%# @subclass6_div='none' %>
+					<%# @subclass8_div='none' %>
+					<%# @subclass9_div='none' %>
+					<%##= @mainclass %> <!--OR VALUE OF @MAINCLASS STUCK AT 1-->
+				<%# end %>
+				<!--have to include this to OVERIDE value of @mainclass=1 when classification == 201-->
+				
+		<% else %>
+			<% @subclass1_div='none' %><% @subclass2_div='none' %><% @subclass3_div='none' %><% @subclass4_div='none' %>
+			<% @subclass5_div='none' %>
+		<% end %>
+		<!--23&24Feb2013-ASSIGN data of main_class & sub_class for EDIT pg-->
+		
+		<%= f.select :main_class, Cofile::MAIN_CLASSIFICATION,  :selected=>@mainclass.to_i, :include_blank => true %>
+		<%#= f.select :main_class, Cofile::MAIN_CLASSIFICATION,  :selected=>@mainclass.to_i, :prompt => "Please select"%>
+		
+		<%#---------------------------------PROJECT---------------------------------------%>
+
+<% 1.upto(5) do |repeat_main_span|%>
+	<% if repeat_main_span == 1 %>
+		<% @span_main = "project" %>
+		<% @classification_list = Cofile::PROJECT_MGMT %>
+		<% @subclassdiv = @subclass1_div %>
+		<% @subsubclass = "subproject" %>
+	<% elsif repeat_main_span == 2 %>
+		<% @span_main = "admin"%>
+		<% @classification_list = Cofile::ADMIN_REQ %>
+		<% @subclassdiv = @subclass2_div %>
+		<% @subsubclass = "subadmin" %>
+	<% elsif repeat_main_span == 3 %>
+		<% @span_main = "finance" %>
+		<% @classification_list = Cofile::FINANCE%>
+		<% @subclassdiv = @subclass3_div %>
+		<% @subsubclass = "subfinance" %>
+	<% elsif repeat_main_span == 4 %>
+		<% @span_main = "ils_req" %>
+		<% @classification_list = Cofile::ILS_REQ %>
+		<% @subclassdiv = @subclass4_div %>
+		<% @subsubclass = "subilsreq" %>
+	<% elsif repeat_main_span == 5 %>
+		<% @span_main = "quality_assurance" %>
+		<% @classification_list = Cofile::QUALITY_ASSURANCE %>
+		<% @subclassdiv = @subclass5_div %>
+		<% @subsubclass = "subqassurance" %>
+	<% end %>	
+		<SPAN class="<%=@span_main%>", style="display: <%=@subclassdiv%>;">
+			<% if repeat_main_span == 1 %>
+				<% if (@cofile.classification.to_s  =~ /1(.*)/ ) %>
+					<%= f.select :sub_class, @classification_list, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>
+					<%= f.select :sub_class, @classification_list, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 2 %>
+				<% if (@cofile.classification.to_s  =~ /2(.*)/ ) %>
+					<%= f.select :sub_class2, Cofile::ADMIN_REQ, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>
+					<%= f.select :sub_class2, Cofile::ADMIN_REQ, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 3 %>
+				<% if (@cofile.classification.to_s  =~ /3(.*)/ ) %>
+					<%= f.select :sub_class3, Cofile::FINANCE, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>
+					<%= f.select :sub_class3, Cofile::FINANCE, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 4 %>
+				<% if (@cofile.classification.to_s  =~ /4(.*)/ ) %>
+					<%= f.select :sub_class4, Cofile::ILS_REQ, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>	
+					<%= f.select :sub_class4, Cofile::ILS_REQ, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 5 %>
+				<% if (@cofile.classification.to_s  =~ /5(.*)/ ) %>
+					<%= f.select :sub_class5, Cofile::QUALITY_ASSURANCE, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>	
+					<%= f.select :sub_class5, Cofile::QUALITY_ASSURANCE, :prompt => "Please select" %>
+				<% end %>
+			<% end %>
+
+			
+			<!--moved into parent span-->
+			<% aa = []%>
+			<% @classification_list.each do |l, k| %>
+				<% aa << k%>
+			<% end %>			
+			<% 1.upto(aa.count) do |count|%>
+				<SPAN class="<%=@subsubclass%><%=count%>", style="display: none;">
+					<% counter = count-1%>
+					<% classnum = aa[counter] %>
+
+					<% if Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code)!= nil %>		
+						<% cofilecode_val = (Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1 %>				
+					<% else %>
+						<% cofilecode_val = 1%>
+					<% end %>
+
+					- <%= f.text_field :cofile_code2, :size=>6, :value => cofilecode_val %>
+					<!--Do not remove: although user change 'main_class' & 'sub_class' multiple times, but as long as their final selection (of CLASSIFICATION) is SAME as 'classification' 
+					value that was saved in the DB, model:cofile(line 269-274 -> this condition : if classification_db != sub_class_val.to_s) will make sure 'classification' &
+					'cofile_code' REMAINS UNCHANGED--> 
+					<!-- 25Feb2013-DO NOT REMOVE : subproject-<%#=count%> -->
+
+				</span>
+			<% end %>
+
+			
+			<!--moved into parent span-->
+		</span>
+<% end %>	<!--end for : 1.upto(5) do |repeat_main_span| -->	
+		
+		<%#---------------------------------PROJECT---------------------------------------%>
+
+		<SPAN class="risk_management", style="display: none;">
+			<!--25Feb2013-DO NOT REMOVE :Risk Management--> <%#= f.text_field :sub_class6, :value=> 6 %>
+		</span>
+		<SPAN class="client_documentation", style="display: none;">
+			<!--25Feb2013-DO NOT REMOVE :Client Documentation--> <%#= f.text_field :sub_class8, :value=> 8 %> <%#= hidden_field_tag 'subclass8', 8 %>
+		</span>
+		<SPAN class="submission", style="display: none;">
+			<!--25Feb2013-DO NOT REMOVE :Submission--> <%#= f.text_field :sub_class9, :value=>9 %>
+		</span>
+	</td>
+</tr>
+
+<script type="text/javascript">
+		$j(document).ready(function(){
+		  $j('#cofile_main_class').change(function() {
+		    if($j(this).val() == 1) {
+		      	$j('.project').show();
+					$j('.admin').hide();
+					$j('.finance').hide();
+					$j('.ils_req').hide();
+					$j('.quality_assurance').hide();
+					$j('.risk_management').hide();
+					$j('.client_documentation').hide();
+					$j('.submission').hide();
+		    }else if ($j(this).val() == 2) {
+		     	$j('.admin').show();
+					$j('.project').hide();
+					$j('.finance').hide();
+					$j('.ils_req').hide();
+					$j('.quality_assurance').hide();
+					$j('.risk_management').hide();
+					$j('.client_documentation').hide();
+					$j('.submission').hide();
+			}
+			else if ($j(this).val() == 3) {
+		     	$j('.finance').show();
+					$j('.project').hide();
+					$j('.admin').hide();
+				 	$j('.ils_req').hide();
+					$j('.quality_assurance').hide();	
+					$j('.risk_management').hide();
+					$j('.client_documentation').hide();
+					$j('.submission').hide();	
+		    }
+			else if ($j(this).val() == 4) {
+			     $j('.ils_req').show();
+					$j('.project').hide();
+					$j('.admin').hide();
+					$j('.finance').hide();
+					$j('.quality_assurance').hide();
+					$j('.risk_management').hide();
+					$j('.client_documentation').hide();
+					$j('.submission').hide();		
+			}
+			else if ($j(this).val() == 5) {
+			     $j('.quality_assurance').show();
+					$j('.project').hide();
+					$j('.admin').hide();
+					$j('.finance').hide();
+					$j('.ils_req').hide();	
+					$j('.risk_management').hide();
+					$j('.client_documentation').hide();
+					$j('.submission').hide();	
+			}
+			else if ($j(this).val() == 6) {
+			     $j('.risk_management').show();
+					$j('.project').hide();
+					$j('.admin').hide();
+					$j('.finance').hide();
+					$j('.ils_req').hide();	
+					$j('.quality_assurance').hide();
+					$j('.client_documentation').hide();
+					$j('.submission').hide();	
+			}
+			else if ($j(this).val() == 8) {
+			     $j('.client_documentation').show();
+					$j('.project').hide();
+					$j('.admin').hide();
+					$j('.finance').hide();
+					$j('.ils_req').hide();	
+					$j('.quality_assurance').hide();
+					$j('.risk_management').hide();
+					$j('.submission').hide();	
+			}
+			else if ($j(this).val() == 9) {
+			     $j('.submission').show();
+					$j('.project').hide();
+					$j('.admin').hide();
+					$j('.finance').hide();
+					$j('.ils_req').hide();	
+					$j('.quality_assurance').hide();
+					$j('.risk_management').hide();
+					$j('.client_documentation').hide();	
+			}
+			});
+			/*second part*/
+			$j('#cofile_sub_class').change(function() {
+			    if($j(this).val() == 101) {
+			      	$j('.subproject1').show();
+						$j('.subproject2').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+						
+			 }
+				if($j(this).val() == 102) {
+					$j('.subproject2').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 103) {
+					$j('.subproject3').show();
+						$j('.subproject1').hide();
+						$j('.subproject2').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 104) {
+					$j('.subproject4').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject2').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 105) {
+					$j('.subproject5').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject2').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 106) {
+					$j('.subproject6').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject2').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 107) {
+					$j('.subproject7').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject2').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 108) {
+					$j('.subproject8').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject2').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 109) {
+					$j('.subproject9').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject2').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 110) {
+					$j('.subproject10').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject2').hide();
+						$j('.subproject11').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 111) {
+					$j('.subproject11').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject2').hide();
+						$j('.subproject12').hide();
+			 }
+				if($j(this).val() == 112) {
+					$j('.subproject12').show();
+						$j('.subproject1').hide();
+						$j('.subproject3').hide();
+						$j('.subproject4').hide();
+						$j('.subproject5').hide();
+						$j('.subproject6').hide();
+						$j('.subproject7').hide();
+						$j('.subproject8').hide();
+						$j('.subproject9').hide();
+						$j('.subproject10').hide();
+						$j('.subproject11').hide();
+						$j('.subproject2').hide();
+			 }
+			});
+			/*third part*/
+			/*second part - 24Feb2013*/
+			$j('#cofile_sub_class2').change(function() {
+			    if($j(this).val() == 201) {
+			      	$j('.subadmin1').show();
+						$j('.subadmin2').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 202) {
+			      	$j('.subadmin2').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 203) {
+			      	$j('.subadmin3').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 204) {
+			      	$j('.subadmin4').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 205) {
+			      	$j('.subadmin5').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 206) {
+			      	$j('.subadmin6').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 207) {
+			      	$j('.subadmin7').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 208) {
+			      	$j('.subadmin8').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 209) {
+			      	$j('.subadmin9').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 210) {
+			      	$j('.subadmin10').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 211) {
+			      	$j('.subadmin11').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 212) {
+			      	$j('.subadmin12').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 213) {
+			      	$j('.subadmin13').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 214) {
+			      	$j('.subadmin14').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 215) {
+			      	$j('.subadmin15').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 216) {
+			      	$j('.subadmin16').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 217) {
+			      	$j('.subadmin17').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 218) {
+			      	$j('.subadmin18').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 219) {
+			      	$j('.subadmin19').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin2').hide();
+						$j('.subadmin20').hide();
+				}
+				if($j(this).val() == 220) {
+			      	$j('.subadmin20').show();
+						$j('.subadmin1').hide();
+						$j('.subadmin3').hide();
+						$j('.subadmin4').hide();
+						$j('.subadmin5').hide();
+						$j('.subadmin6').hide();
+						$j('.subadmin7').hide();
+						$j('.subadmin8').hide();
+						$j('.subadmin9').hide();
+						$j('.subadmin10').hide();
+						$j('.subadmin11').hide();
+						$j('.subadmin12').hide();
+						$j('.subadmin13').hide();
+						$j('.subadmin14').hide();
+						$j('.subadmin15').hide();
+						$j('.subadmin16').hide();
+						$j('.subadmin17').hide();
+						$j('.subadmin18').hide();
+						$j('.subadmin19').hide();
+						$j('.subadmin2').hide();
+				}
+			 });
+			/*second part - 24Feb2013*/
+			/*third part - 24Feb2013*/ 
+			$j('#cofile_sub_class3').change(function() {
+			    if($j(this).val() == 301) {
+			      	$j('.subfinance1').show();
+						$j('.subfinance2').hide();
+						$j('.subfinance3').hide();						
+				}
+				if($j(this).val() == 302) {
+			      	$j('.subfinance2').show();
+						$j('.subfinance1').hide();
+						$j('.subfinance3').hide();						
+				}
+				if($j(this).val() == 303) {
+			      	$j('.subfinance3').show();
+						$j('.subfinance2').hide();
+						$j('.subfinance1').hide();						
+				}
+			 });
+			/*third part - 24Feb2013*/
+			/*fouth part - 24Feb2013*/ 
+			$j('#cofile_sub_class4').change(function() {
+			    if($j(this).val() == 401) {
+			      	$j('.subilsreq1').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq5').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 402) {
+			      	$j('.subilsreq2').show();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq5').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 403) {
+			      	$j('.subilsreq3').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq1').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq5').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 404) {
+			      	$j('.subilsreq4').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq1').hide();
+						$j('.subilsreq5').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 405) {
+			      	$j('.subilsreq5').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 406) {
+			      	$j('.subilsreq6').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				if($j(this).val() == 407) {
+			      	$j('.subilsreq7').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				if($j(this).val() == 408) {
+			      	$j('.subilsreq8').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				if($j(this).val() == 409) {
+			      	$j('.subilsreq9').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				 if($j(this).val() == 410) {
+			      	$j('.subilsreq10').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				if($j(this).val() == 411) {
+			      	$j('.subilsreq11').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 420) {
+			      	$j('.subilsreq12').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 421) {
+			      	$j('.subilsreq13').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 422) {
+			      	$j('.subilsreq14').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 423) {
+			      	$j('.subilsreq15').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				if($j(this).val() == 430) {
+			      	$j('.subilsreq16').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 431) {
+			      	$j('.subilsreq17').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 440) {
+			      	$j('.subilsreq18').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				if($j(this).val() == 441) {
+			      	$j('.subilsreq19').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+				if($j(this).val() == 442) {
+			      	$j('.subilsreq20').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 443) {
+			      	$j('.subilsreq21').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 450) {
+			      	$j('.subilsreq22').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 451) {
+			      	$j('.subilsreq23').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 452) {
+			      	$j('.subilsreq24').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq5').hide();	
+						$j('.subilsreq25').hide();			
+				}
+			    if($j(this).val() == 499) {
+			      	$j('.subilsreq25').show();
+						$j('.subilsreq2').hide();
+						$j('.subilsreq3').hide();	
+						$j('.subilsreq4').hide();
+						$j('.subilsreq1').hide();
+						$j('.subilsreq6').hide();	
+						$j('.subilsreq7').hide();	
+						$j('.subilsreq8').hide();	
+						$j('.subilsreq9').hide();	
+						$j('.subilsreq10').hide();	
+						$j('.subilsreq11').hide();	
+						$j('.subilsreq12').hide();	
+						$j('.subilsreq13').hide();	
+						$j('.subilsreq14').hide();	
+						$j('.subilsreq15').hide();	
+						$j('.subilsreq16').hide();	
+						$j('.subilsreq17').hide();	
+						$j('.subilsreq18').hide();	
+						$j('.subilsreq19').hide();	
+						$j('.subilsreq20').hide();	
+						$j('.subilsreq21').hide();	
+						$j('.subilsreq22').hide();	
+						$j('.subilsreq23').hide();	
+						$j('.subilsreq24').hide();	
+						$j('.subilsreq5').hide();			
+				}
+			});
+			/*fouth part - 24Feb2013*/
+			/*fifth part - 24Feb2013*/
+			
+			$j('#cofile_sub_class5').change(function() {
+				if($j(this).val() == 501) {
+			      	$j('.subqassurance1').show();
+						$j('.subqassurance2').hide();
+						$j('.subqassurance3').hide();
+						$j('.subqassurance4').hide();
+						$j('.subqassurance5').hide();
+						$j('.subqassurance6').hide();
+						$j('.subqassurance7').hide();
+						$j('.subqassurance8').hide();			
+				}
+				if($j(this).val() == 502) {
+			      	$j('.subqassurance2').show();
+						$j('.subqassurance1').hide();
+						$j('.subqassurance3').hide();
+						$j('.subqassurance4').hide();
+						$j('.subqassurance5').hide();
+						$j('.subqassurance6').hide();
+						$j('.subqassurance7').hide();
+						$j('.subqassurance8').hide();			
+				}
+				if($j(this).val() == 503) {
+			      	$j('.subqassurance3').show();
+						$j('.subqassurance2').hide();
+						$j('.subqassurance1').hide();
+						$j('.subqassurance4').hide();
+						$j('.subqassurance5').hide();
+						$j('.subqassurance6').hide();
+						$j('.subqassurance7').hide();
+						$j('.subqassurance8').hide();			
+				}
+				if($j(this).val() == 516) {
+			      	$j('.subqassurance4').show();
+						$j('.subqassurance2').hide();
+						$j('.subqassurance3').hide();
+						$j('.subqassurance1').hide();
+						$j('.subqassurance5').hide();
+						$j('.subqassurance6').hide();
+						$j('.subqassurance7').hide();
+						$j('.subqassurance8').hide();			
+				}
+				if($j(this).val() == 520) {
+			      	$j('.subqassurance5').show();
+						$j('.subqassurance2').hide();
+						$j('.subqassurance3').hide();
+						$j('.subqassurance4').hide();
+						$j('.subqassurance1').hide();
+						$j('.subqassurance6').hide();
+						$j('.subqassurance7').hide();
+						$j('.subqassurance8').hide();			
+				}
+				if($j(this).val() == 521) {
+			      	$j('.subqassurance6').show();
+						$j('.subqassurance2').hide();
+						$j('.subqassurance3').hide();
+						$j('.subqassurance4').hide();
+						$j('.subqassurance5').hide();
+						$j('.subqassurance1').hide();
+						$j('.subqassurance7').hide();
+						$j('.subqassurance8').hide();			
+				}
+				if($j(this).val() == 522) {
+			      	$j('.subqassurance7').show();
+						$j('.subqassurance2').hide();
+						$j('.subqassurance3').hide();
+						$j('.subqassurance4').hide();
+						$j('.subqassurance5').hide();
+						$j('.subqassurance6').hide();
+						$j('.subqassurance1').hide();
+						$j('.subqassurance8').hide();			
+				}
+				if($j(this).val() == 550) {
+			      	$j('.subqassurance8').show();
+						$j('.subqassurance2').hide();
+						$j('.subqassurance3').hide();
+						$j('.subqassurance4').hide();
+						$j('.subqassurance5').hide();
+						$j('.subqassurance6').hide();
+						$j('.subqassurance7').hide();
+						$j('.subqassurance1').hide();			
+				}
+			 });
+			/*fifth part - 24Feb2013*/
+	});
+</script>

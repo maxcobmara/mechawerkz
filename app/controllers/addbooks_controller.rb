@@ -2,11 +2,29 @@ class AddbooksController < ApplicationController
   # GET /addbooks
   # GET /addbooks.xml
   def index
+    #raise params.inspect
     @addbooks = Addbook.search(params[:search])
-
+    @listadd = @addbooks.group_by { |t| t.name } 
+    #@listcount = @listadd.count
+    
+    @search = params[:search] #PASSED CURRENT record selection to view page
+    #@coba = Addbook.search(@search).count
+    #@cobaan = Addbook.search(@search)
+    
+    #@listadd2=Addbook.search('Z').group_by { |t| t.name }
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @addbooks }
+       #----start of----PDF creation of cofiles-25 Feb 2012 --------------------
+       #--1) set -> mime-type : initializer/mimes_types.rb
+       #--2) include -> require 'pdf/writer', require 'pdf/simpletable' : lib/addbook_drawer.rb
+       #--3) include -> link for pdf format : view/cofiles/index.html.erb
+       #--4) include format.pdf block as below...
+        format.pdf do
+   			  send_data AddbookDrawer.draw(@listadd),:filename => 'addbook.pdf', :type=>'application/pdf',:disposition=>'inline'
+   		  end
+   		  #----end of----PDF creation of cofiles-25 Feb 2012----------------------
     end
   end
 

@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :uploadedfiles
+
+  map.resources :phones
+
   map.resources :travel_claim_mileage_rates
 
   map.resources :travel_claims_transport_groups
@@ -185,6 +189,12 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/position/maklumat_perjawatan_LA', :controller => 'positions', :action => 'maklumat_perjawatan_LA'
   map.resources :positions
 
+  #19Feb2013-import data from excel file
+  map.connect '/cofiles/import_cofile_from_excel/', :controller => 'cofiles', :action => 'import_cofile_from_excel' 
+  #map.connect '/product/import_excel/', :controller => 'products', :action => 'import_excel' 
+  map.connect '/public/data/standard_format/Filing_format.xls', :controller => 'cofiles' ,:action => 'download_comp_format', :target => '_self'
+  map.connect '/public/data/standard_format/hpcomp.xlsx', :controller => 'cofiles' ,:action => 'download_other_format', :target => '_self'
+  #19Feb2013-import data from excel file
   map.resources :cofiles
 
   map.resources :documents

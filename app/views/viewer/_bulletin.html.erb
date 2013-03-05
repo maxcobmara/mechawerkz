@@ -10,8 +10,11 @@ $j(document).ready(function()  {
 
 <% if (request.request_uri == "/" || request.request_uri == "/home") %>
 <div id="bulletin_title_item">
+	<% permitted_to? :menu, :bulletins do %><!--5Feb2013-->
   <p><%= link_to "[view more]", bulletins_path %></p>
+	<% end %><!--5Feb2013-->
 </div>
+
 <div id="bulletin_bar">
 	 <% dash_bulletins = Bulletin.find(:all, :order => 'publishdt desc', :limit => 5) %>
 	 <ul id="ticker01">

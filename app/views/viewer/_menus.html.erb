@@ -139,11 +139,12 @@
 	
 	
 	<!-- E-Filing Menu -->
-	<!--
-	<%# permitted_to? :read, :documents do %>
+	
+	<% permitted_to? :read, :documents do %>
 	<li><a href="#">E-Filing</a>
 			<ul class="sub_menu">
 				<%# permitted_to? :manage, :pages do %>
+				<!--
 				<li><%#= link_to 'Campus Info', 			  {:controller => 'pages', 				:action => 'edit',  :id => 1} %></li>
 				<%# end %>
 				<li><%#= link_to 'Campus Events', 			{:controller => 'events', 			:action => 'index'} %></li>
@@ -153,12 +154,13 @@
 				<%# permitted_to? :manage, :pages do %>
 				<li><%#= link_to 'Equery/Reports', 		'/Reports' %></li>
 				<%# end %>
-				<li><%#= link_to 'Document Registry', 	{:controller => 'documents', 		:action => 'index'} %></li>
-				<li><%#= link_to 'File Registry', 			{:controller => 'cofiles', 			:action => 'index'} %></li>
+				-->
+				<li><%= link_to 'Document Registry', 	{:controller => 'documents', 		:action => 'index'} %></li>
+				<li><%= link_to 'File Registry', 			{:controller => 'cofiles', 			:action => 'index'} %></li>	
 			</ul>
 	</li>
-	<%# end %>
-	-->
+	<% end %>
+
 	
 	<!-- Student Menu -->
 	<!--
@@ -264,24 +266,28 @@
 			</ul>
 	</li>-->
 	
+	
+	<% permitted_to? :manage, :addbooks do %>
+	<!---->
+	<li><%= link_to 'Address Book',   {:controller => 'addbooks', :action => 'index'} %></li>
+	<!---->
+	<% end %>
 	<!-- Administration Menu -->
 	
 	<!--4Feb2013-temp-use of least condition-line 269-83-->
-	<%# permitted_to? :core, :roles do %>
-	<% permitted_to? :manage, :addbooks do %>
+	<% permitted_to? :core, :roles do %>
+	<%# permitted_to? :manage, :addbooks do %>
 	<li><a href="#">Administration</a>
 			<ul class="sub_menu">
-				<% permitted_to? :core, :roles do %>
+				<%# permitted_to? :core, :roles do %>
 					<li><%= link_to 'Users',   				{:controller => 'users', 	:action => 'index'} %></li>
 					<li><%= link_to 'Roles',   				{:controller => 'roles', 	:action => 'index'} %></li>
 					<!--
 					<li><%#= link_to 'Pages',   				{:controller => 'pages', 	:action => 'index'} %></li>
 					-->
-				<% end %>
+				<%# end %>
 			
-				<!---->
-				<li><%= link_to 'Address Book',   {:controller => 'addbooks', :action => 'index'} %></li>
-				<!---->
+				
 				
 				<!--hide 4 feb 2013-->
 				<!--

@@ -3,7 +3,7 @@ class Document < ActiveRecord::Base
 #belongs_to :documents, :foreign_key => 'staff_id'
 # has_one :title
 
-validates_presence_of :serialno, :refno, :category, :title, :letterdt, :letterxdt, :from, :stafffiled_id
+validates_presence_of :refno, :category, :title, :letterdt, :letterxdt, :from, :stafffiled_id #:serialno, #26Feb2013-remove compulsory for serialno
 
 belongs_to :stafffilled,    :class_name => 'Staff', :foreign_key => 'stafffiled_id'
 belongs_to :cc1staff, :class_name => 'Staff', :foreign_key => 'cc1staff_id' 
@@ -18,6 +18,10 @@ before_save :set_actionstaff2_to_blank_if_close_is_selected
   def set_actionstaff2_to_blank_if_close_is_selected
     if cc1closed == true
       self.cc2staff_id = nil
+      self.closed = true #7Feb2013-set close when cc1closed == true
+    end
+    if cc2closed == true
+      self.closed = true #7Feb2013-set close when cc2closed == true
     end
   end
 

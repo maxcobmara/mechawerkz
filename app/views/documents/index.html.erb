@@ -12,14 +12,16 @@
   </div>
 </div>
 
+<% permitted_to? :create, :documents do %>
 <div class="toolbar">
 	<p><%= link_to image_tag("add.png", :border => 0, :title => 'New Document') + "New", new_document_path %></p>
 </div>
+<% end %>
 
 <div class="indextable">
 	<table width=100% border="0" cellpadding="0" cellspacing="0">
 		<tr>
-		  <th>Serial No</th>
+		  <!--26Feb2013<th>Serial No</th>-->
 		  <th>Ref No</th>
 		  <th>Category</th>
 		  <th>Title</th>
@@ -38,7 +40,7 @@
         
 			<% for document in documents %>
 			<tr>
-				<td><%=h document.serialno %></td>
+				<!--26Feb2013-<td><%=h document.serialno %></td>-->
 				<td><%=h document.refno %></td>
 				<td><%=h (Document::CATEGORY.find_all{|disp, value| value == document.category.to_s}).map {|disp, value| disp} %></td>
 				<td><%=h document.title %></td>
@@ -50,7 +52,9 @@
 				<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => document %></td>
 				<td width=10px>
 						<% if document.owner_ids.include? current_user.staff_id %>
-							<%= link_to image_tag("edit.png",     :border => 0, :title => 'Edit'), :action => 'edit', :id => document %>
+							<% unless document.closed == true %><!--7Feb2013-show link when closed != true-->
+								<%= link_to image_tag("edit.png",     :border => 0, :title => 'Edit'), :action => 'edit', :id => document %>
+							<% end %><!--7Feb2013-show link when closed != true-->
 						<% end %></td>
 				<td width=10px>
 					  <% if document.stafffiled_id == current_user.staff_id %>
@@ -63,5 +67,6 @@
 </div>
 
 <br />
-
-<%= link_to 'New Document', new_document_path %>
+<% permitted_to? :create, :documents do %>
+	<%= link_to 'New Document', new_document_path %>
+<% end %>

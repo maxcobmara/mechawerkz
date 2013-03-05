@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226132654) do
+ActiveRecord::Schema.define(:version => 20130226083048) do
 
   create_table "accessions", :force => true do |t|
     t.integer  "book_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20121226132654) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "shortname"
+    t.string   "contact_person"
   end
 
   create_table "addsuppliers", :force => true do |t|
@@ -463,6 +464,11 @@ ActiveRecord::Schema.define(:version => 20121226132654) do
     t.date     "onloanxdt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "company"
+    t.string   "remark"
+    t.integer  "division"
+    t.string   "cofile_code"
+    t.integer  "classification"
   end
 
   create_table "counsellings", :force => true do |t|
@@ -522,6 +528,7 @@ ActiveRecord::Schema.define(:version => 20121226132654) do
     t.string   "cc2action"
     t.text     "cc2remarks"
     t.boolean  "cc2closed"
+    t.integer  "document_type"
   end
 
   create_table "employgrades", :force => true do |t|
@@ -833,6 +840,14 @@ ActiveRecord::Schema.define(:version => 20121226132654) do
     t.decimal  "minquantity"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "phones", :force => true do |t|
+    t.string   "phone_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "addbook_id"
+    t.string   "phone_type"
   end
 
   create_table "positions", :force => true do |t|
@@ -1597,6 +1612,14 @@ ActiveRecord::Schema.define(:version => 20121226132654) do
     t.decimal  "quantity"
     t.date     "tdate"
     t.text     "details"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "uploadedfiles", :force => true do |t|
+    t.string   "name"
+    t.string   "content_type"
+    t.binary   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

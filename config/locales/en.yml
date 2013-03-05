@@ -69,12 +69,12 @@ en:
           template:
             body: "There were problems with the following fields:"
             header:
-              one: "1 errors prohibited this {{model}} from being saved"
-              other: "{{count}} prohibited this {{model}} from being saved"
+              one: "1 errors prohibited this %{model} from being saved"
+              other: "%{count} prohibited this %{model} from being saved"
           message:
               blank: "cant't be blank"
               not_a_number: "is not number"
-              too_short: "is too short (minimum is {{count}} characters)"
+              too_short: "is too short (minimum is %{count} characters)"
               taken: "has already been taken"
 
   icms: 
@@ -702,7 +702,7 @@ en:
     title: Title
     letterdt: Letter Date
     letterxdt: Received Date
-    from: From
+    from: "From / To"
     stafffiled_id: Filled By
     closed: Closed
     doc_details: Document Details
@@ -713,17 +713,43 @@ en:
       
   cofile:
      new: New File
+     create: New File
      edit: Editing File
      list: File List
      cofileno: File No
      name: File Name
+     company: Company
+     remark: Remark
      location: Location
+     division: Division
      owner: Owner
      onloan: On Loan
      onloan_to: On Loan To
      onloandt: On Loan Date
-     onloanxdt: On Loan Returned Date
-     file_details: File Details
+     onloanxdt: On Loan Returned Date 
+     file_details: File Details 
+     import_data_from_excel: Import data from excel file
+     import_data_from_excel_file: "File Registry : Import data from excel file"
+     file_to_import: File to import
+     product_type: Product type
+     please_select: Please select
+     import_data: Import data
+     supported_file_type: Supported file type
+     standard_format: Standard format
+     please_provide_data_in_standard_format_and_file_type_accordingly: Please provide data in standard format. 
+     import_failed_please_check: "Existing files :" 
+     file_registry_listing: Back to File Registry Listing
+     import_of_excel_file_was_failed_all_imported_product_already_exist: Import of <i>spreadsheet file</i> was failed. All data from the spreadsheet already exist in the system. No duplicate <b>File Name</b> allowed.
+     newly_imported_files: "Newly imported files :"
+     new_product_was_successfully_imported: " new product(s) was successfully imported."
+     filling_sample: Filing format sample
+     please_select_a_file_and_product_type: Please select a file.
+     files: " file(s) "
+     successfull_and: " was successful and "
+     failed: failed.
+     import_of: "Import of "
+     international_code: International Code
+     cofile_code: "Int. No" 
    
   student: 
     new: New Student
