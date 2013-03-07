@@ -2,10 +2,10 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
   adapter: postgresql
-  database: office_automation
+  database: mechawerkz
   host: localhost
-  username: teknikpadu
-  password: tpsb_private
+  username: postgres
+  password: password
   encoding: UTF8
   
   
