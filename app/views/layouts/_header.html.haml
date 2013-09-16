@@ -1,0 +1,19 @@
+%header.navbar.navbar-fixed-top.navbar-inverse
+  .container
+    = link_to "Skeleton", '#', id: "logo"
+    %nav.small
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+        
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        %ul.nav.navbar-nav.pull-right
+          - if I18n.locale == I18n.default_locale
+            %li= link_to image_tag("MY.png", :border => 0, :title => 'Bahasa Malaysia'), locale: "ms_MY"
+          - else
+            %li= link_to image_tag("GB.png", :border => 0, :title => 'English'), locale: "en"
+          %li= link_to "Home",    '#'
+          %li= link_to "Help",    help_path
+          %li= link_to "Sign in", new_user_session_path
