@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918154941) do
+ActiveRecord::Schema.define(version: 20130918160802) do
+
+  create_table "contact_companies", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "postcode",   limit: 12
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contact_media", force: true do |t|
+    t.integer  "person_id"
+    t.integer  "company_id"
+    t.integer  "medium_type"
+    t.string   "medium",      limit: 50
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contact_medium_types", force: true do |t|
+    t.string   "description", limit: 24
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contact_people", force: true do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.string   "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name",        null: false

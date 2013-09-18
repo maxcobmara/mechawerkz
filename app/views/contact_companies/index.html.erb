@@ -1,0 +1,33 @@
+<h1>Listing contact_companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Postcode</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contact_companies.each do |contact_company| %>
+      <tr>
+        <td><%= contact_company.name %></td>
+        <td><%= contact_company.address %></td>
+        <td><%= contact_company.postcode %></td>
+        <td><%= contact_company.state %></td>
+        <td><%= link_to 'Show', contact_company %></td>
+        <td><%= link_to 'Edit', edit_contact_company_path(contact_company) %></td>
+        <td><%= link_to 'Destroy', contact_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact company', new_contact_company_path %>

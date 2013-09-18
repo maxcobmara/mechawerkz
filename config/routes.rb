@@ -1,4 +1,12 @@
 Mechawerkz::Application.routes.draw do
+  resources :contact_medium_types
+
+  resources :contact_media
+
+  resources :contact_companies
+
+  resources :contact_people
+
   devise_for :users
   root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'

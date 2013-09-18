@@ -1,0 +1,27 @@
+<h1>Listing contact_medium_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contact_medium_types.each do |contact_medium_type| %>
+      <tr>
+        <td><%= contact_medium_type.description %></td>
+        <td><%= link_to 'Show', contact_medium_type %></td>
+        <td><%= link_to 'Edit', edit_contact_medium_type_path(contact_medium_type) %></td>
+        <td><%= link_to 'Destroy', contact_medium_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact medium type', new_contact_medium_type_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @contact_medium.person_id %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @contact_medium.company_id %>
+</p>
+
+<p>
+  <strong>Medium type:</strong>
+  <%= @contact_medium.medium_type %>
+</p>
+
+<p>
+  <strong>Medium:</strong>
+  <%= @contact_medium.medium %>
+</p>
+
+<%= link_to 'Edit', edit_contact_medium_path(@contact_medium) %> |
+<%= link_to 'Back', contact_media_path %>

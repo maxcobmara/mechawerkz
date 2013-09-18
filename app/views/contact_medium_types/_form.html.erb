@@ -1,0 +1,21 @@
+<%= form_for(@contact_medium_type) do |f| %>
+  <% if @contact_medium_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact_medium_type.errors.count, "error") %> prohibited this contact_medium_type from being saved:</h2>
+
+      <ul>
+      <% @contact_medium_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
