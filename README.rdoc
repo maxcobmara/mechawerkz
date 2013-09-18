@@ -10,13 +10,13 @@ Address Book
 
 Whats in the Box
 ---------------- 
-#Capybara, Selenium, RSpec for Testing
-#Thin Webserver
-#Twitter Bootstrap 3 with custom icon helper
-#Dual Language
-#Devise authentication with integrated error messages
-#the_role authorisation
-#JQuery Multilevel Menu
+# Capybara, Selenium, RSpec for Testing
+# Thin Webserver
+# Twitter Bootstrap 3 with custom icon helper
+# Dual Language
+# Devise authentication with integrated error messages
+# the_role authorisation
+# JQuery Multilevel Menu
 
 
 

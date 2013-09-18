@@ -7,6 +7,7 @@ gem "thin", "~> 1.5.1"
 gem 'devise'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem "bootstrap-sass-rails", "~> 3.0.0.2"
+gem "the_role", "~> 2.1.1"
 
 
 gem 'sass-rails', '~> 4.0.0'  # Use SCSS for stylesheets
