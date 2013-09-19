@@ -1,6 +1,8 @@
 %header.navbar.navbar-fixed-top.navbar-inverse
   .container
-    = link_to "Mechawerkz", '#', id: "logo"
+    %a#trigger.menu-trigger{:href => "#"} Mechawerks
+
+    //= link_to "Mechawerkz", '#', id: "logo"
     %nav.small
       %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
@@ -17,3 +19,8 @@
           %li= link_to "Home",    '#'
           %li= link_to "Help",    help_path
           %li= link_to "Sign in", new_user_session_path
+          
+%script{:src => "classie.js"}
+%script{:src => "mlpushmenu.js"}
+:javascript
+  new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );

@@ -3,9 +3,11 @@
 
 /* mixins, variables, etc. */
 
+
 $grayMediumLight: #eaeaea;
 $grayLight: #999;
 $grayDarker: #222;
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -16,15 +18,18 @@ $grayDarker: #222;
 /* universal */
 
 html {
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
 }
 
+a:link {font-color:white;}
+
 body {
-  padding-top: 60px;
+  padding-top: 51px;
+  background-color: #fff;
 }
 
 section {
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 textarea {
@@ -67,7 +72,8 @@ p {
 
 
 /* header */
-
+/*
+logo is no longer used see component.css.scss trigger
 #logo {
   float: left;
   margin-right: 10px;
@@ -82,7 +88,8 @@ p {
     color: white;
     text-decoration: none;
   }
-}
+}*/
+
 
 /* footer */
 

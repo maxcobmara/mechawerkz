@@ -9,14 +9,53 @@
     - if content_for? :for_head
       = yield :for_head
 
-    %body
+  %body
+    .container
       = render 'layouts/header'
-
-      .container
-        - flash.each do |key, value|
-          %div{:class => "alert alert-#{key}"}= value
-        - if signed_in?
-          = render 'layouts/menu'
-        = yield
-        = render 'layouts/footer'
-
+      / Push Wrapper
+      #mp-pusher.mp-pusher
+        / mp-menu
+        = render 'layouts/menu'
+        / /mp-menu
+        .scroller
+          / this is for emulating position fixed of the nav
+          .scroller-inner
+            / Top Navigation
+            .codrops-top.clearfix
+              %a.codrops-icon.codrops-icon-prev{:href => "http://tympanus.net/Tutorials/CircularNavigation/"}
+                %span Previous Demo
+              %span.right
+                %a.codrops-icon.codrops-icon-drop{:href => "http://tympanus.net/codrops/?p=16252"}
+                  %span Back to the Codrops Article
+            %header.codrops-header
+              %h1
+                Multi-Level Push Menu
+                %span Off-screen navigation with multiple levels
+            .content.clearfix
+              .block.block-40.clearfix
+                %p
+                  %a#trigger.menu-trigger{:href => "#"} Open/Close Menu
+                %nav.codrops-demos
+                  %a{:href => "index.html"} Demo 1: Overlapping levels
+                  %a{:href => "index2.html"} Demo 2: Covering levels
+                  %a.current-demo{:href => "index3.html"} Demo 3: Overlapping levels with back links
+              .block.block-60
+                %p
+                  %strong Demo 3:
+                  Overlapping levels with back links
+                %p This menu will open by pushing the website content to the right. It has multi-level functionality, allowing endless nesting of navigation elements.
+                %p The next level can optionally overlap or cover the previous one.
+              .info
+                %p If you enjoyed this you might also like:
+                %p
+                  %a{:href => "http://goo.gl/JLJ4v5"} Responsive Multi-Level Menu
+                %p
+                  %a{:href => "http://goo.gl/qjbq9Y"} Google Nexus Website Menu
+          / /scroller-inner
+        / /scroller
+      / /pusher
+    / /container
+    %script{:src => "classie.js"}
+    %script{:src => "mlpushmenu.js"}
+    :javascript
+      new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );

@@ -1,4 +1,4 @@
-/*@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @font-face {
 	font-weight: normal;
 	font-style: normal;
@@ -11,8 +11,8 @@
 }
 
 body {
-	background: #34495e;
-	color: #fff;
+	/*background: white ; switched*/
+	color: #34495e;
 	font-weight: 300;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 }
@@ -28,7 +28,7 @@ a:hover, a:focus {
 	outline: none;
 }
 
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ *//*
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before,
 .clearfix:after {
 	display: table;
@@ -65,7 +65,7 @@ a:hover, a:focus {
 	opacity: 0.7;
 }
 
-/* To Navigation Style *//*
+/* To Navigation Style */
 .codrops-top {
 	width: 100%;
 	background: #91cfa1;
@@ -117,7 +117,7 @@ a:hover, a:focus {
 	content: "\e004";
 }
 
-/* Demo Buttons Style *//*
+/* Demo Buttons Style */
 .codrops-demos {
 	padding-top: 1em;
 	font-size: 1.1em;
