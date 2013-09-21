@@ -25,8 +25,21 @@ Mechawerkz::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
+  #config.assets.debug = true
+  config.assets.compress = false
+
+  # I keep this off during development because I want
+  # to make sure the compression isn't breaking my JS
   config.assets.debug = true
   
   #devise config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
+  
+  config.serve_static_assets = true
 end

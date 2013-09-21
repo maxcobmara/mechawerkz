@@ -12,15 +12,15 @@
         
       .collapse.navbar-collapse.navbar-ex1-collapse
         %ul.nav.navbar-nav.pull-right
-          - if I18n.locale == I18n.default_locale
-            %li= link_to image_tag("MY.png", :border => 0, :title => 'Bahasa Malaysia'), locale: "ms_MY"
-          - else
-            %li= link_to image_tag("GB.png", :border => 0, :title => 'English'), locale: "en"
+          //- if I18n.locale == I18n.default_locale
+          //  %li= link_to image_tag("MY.png", :border => 0, :title => 'Bahasa Malaysia'), locale: "ms_MY"
+          //- else
+          //  %li= link_to image_tag("GB.png", :border => 0, :title => 'English'), locale: "en"
           %li= link_to "Home",    '#'
           %li= link_to "Help",    help_path
           %li= link_to "Sign in", new_user_session_path
           
-%script{:src => "classie.js"}
-%script{:src => "mlpushmenu.js"}
-:javascript
-  new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+//%script{:src => "classie.js"}
+//%script{:src => "mlpushmenu.js"}
+//:javascript
+//  new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );

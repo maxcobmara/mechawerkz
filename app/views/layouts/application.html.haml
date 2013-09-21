@@ -29,6 +29,7 @@
                 %a.codrops-icon.codrops-icon-drop{:href => "http://tympanus.net/codrops/?p=16252"}
                   %span Back to the Codrops Article
             .content.clearfix
+              = render partial: "shared/flash_messages", flash: flash
               = yield
               = render 'layouts/footer'
               = debug(params) if Rails.env.development?
@@ -59,7 +60,6 @@
         / /scroller
       / /pusher
     / /container
-    %script{:src => "classie.js"}
-    %script{:src => "mlpushmenu.js"}
+
     :javascript
       new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
