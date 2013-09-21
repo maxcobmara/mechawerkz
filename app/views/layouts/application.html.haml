@@ -15,7 +15,8 @@
       / Push Wrapper
       #mp-pusher.mp-pusher
         / mp-menu
-        = render 'layouts/menu'
+        - if signed_in?
+          = render 'layouts/menu'
         / /mp-menu
         .scroller
           / this is for emulating position fixed of the nav
@@ -32,6 +33,13 @@
                 Multi-Level Push Menu
                 %span Off-screen navigation with multiple levels
             .content.clearfix
+              = yield
+              = render 'layouts/footer'
+              = debug(params) if Rails.env.development?
+              %br
+              %br
+              %br
+              %br
               .block.block-40.clearfix
                 %p
                   %a#trigger.menu-trigger{:href => "#"} Open/Close Menu

@@ -165,3 +165,13 @@ input[type=checkbox] {width:13px; height:13px; *overflow: hidden; }
   @extend .control-group;
   @extend .error;
 }
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
