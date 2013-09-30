@@ -231,3 +231,21 @@ input[type=checkbox] {width:13px; height:13px; *overflow: hidden; }
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+
+
+
+
+
+
+/* custom icons */
+.icon-addressbook {
+    background-image:url('./icons/addressbook.png');
+    background-position: center center;
+}
+
+.icon-tree {
+    background-image:url('./bstrap_icons/tree.png');
+    background-position: center center;
+}

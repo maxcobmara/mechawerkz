@@ -3,6 +3,16 @@
     %h2.icon.icon-world All Categories
     %ul
       %li.icon.icon-arrow-left
+        %a.icon.icon-addressbook{:href => "#"} Contacts
+        .mp-level
+          %h2.icon Contacts
+          %a.mp-back{:href => "#"} back
+          %ul
+            %li= link_to content_tag(:i, "", :class => "icon-addressbook") + "Companies", contact_companies_path
+            %li
+              %a.icon.icon-phone{:href => "#"} People
+      
+      %li.icon.icon-arrow-left
         %a.icon.icon-display{:href => "#"} Devices
         .mp-level
           %h2.icon.icon-display Devices
