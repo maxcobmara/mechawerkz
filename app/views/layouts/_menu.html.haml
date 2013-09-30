@@ -121,11 +121,34 @@
       %li
         %a.icon.icon-photo{:href => "#"} Collections
       %li.icon.icon-arrow-left
-        %a.icon.icon-wallet{:href => "#"} Admin
+        %a{:href => "#"} 
+          .glyphicon.glyphicon-tower Admin
         .mp-level
-          %h2.icon.icon-shop Admin
+          //%h2.icon.icon-shop Admin
+          %h2
+            .glyphicon.glyphicon-tower Admin
           %a.mp-back{:href => "#"} back
           %ul
-            %li.icon.icon-arrow-left
-              %a.icon.icon-t-shirt{:href => "/users"} Users
+            %li
+              %a{:href => "/users"} 
+                .glyphicon.glyphicon-user Users
+            %li
+              %a{:href => admin_roles_path} 
+                .glyphicon.glyphicon-star Roles
+                
+      %li.icon.icon-arrow-left
+        %a{:href => "#"} 
+          .glyphicon.glyphicon-user Account
+        .mp-level
+          //%h2.icon.icon-shop Admin
+          %h2
+            .glyphicon.glyphicon-user Account
+          %a.mp-back{:href => "#"} back
+          %ul
+            - if user_signed_in?
+              %li= link_to "Profile", current_user
+              %li= link_to "Settings", edit_user_registration_path(current_user)
+              %li= link_to "Sign out", destroy_user_session_path, method: "delete"
+            - else
+              %li= link_to "Sign in", new_user_session_path
         

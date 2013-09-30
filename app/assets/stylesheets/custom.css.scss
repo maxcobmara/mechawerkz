@@ -75,15 +75,26 @@ p {
 
 a {
 	text-decoration: none;
-	color: #f7f7f7;
-	outline: none;
+	color: #575757;
+	outline: none;	
 }
 
 a:hover, a:focus {
-	color: #fff;
+	color: #5757FF;
 	outline: none;
+	text-decoration: none;
 }
 
+.navbar-fixed-top, .mp-menu {
+  a {text-decoration: none; color: #F7F7F7; outline: none;}
+  a:hover, a:focus {color: #fff; outline: none; }
+}
+
+.navbar-fixed-top {z-index:9999;}
+
+
+
+/*
 .index-table {
 	a { 
 	text-decoration: none;
@@ -96,6 +107,7 @@ a:hover, a:focus {
 		outline: none;
 	}
 }
+*/
 
 
 /* header */

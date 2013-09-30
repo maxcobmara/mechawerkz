@@ -31,31 +31,16 @@
             .content.clearfix
               = render partial: "shared/flash_messages", flash: flash
               = yield
+              = yield :role_sidebar
+              = yield :role_main
               = render 'layouts/footer'
               = debug(params) if Rails.env.development?
               %br
               %br
               %br
               %br
-              .block.block-40.clearfix
-                %p
-                  %a#trigger.menu-trigger{:href => "#"} Open/Close Menu
-                %nav.codrops-demos
-                  %a{:href => "index.html"} Demo 1: Overlapping levels
-                  %a{:href => "index2.html"} Demo 2: Covering levels
-                  %a.current-demo{:href => "index3.html"} Demo 3: Overlapping levels with back links
-              .block.block-60
-                %p
-                  %strong Demo 3:
-                  Overlapping levels with back links
-                %p This menu will open by pushing the website content to the right. It has multi-level functionality, allowing endless nesting of navigation elements.
-                %p The next level can optionally overlap or cover the previous one.
-              .info
-                %p If you enjoyed this you might also like:
-                %p
-                  %a{:href => "http://goo.gl/JLJ4v5"} Responsive Multi-Level Menu
-                %p
-                  %a{:href => "http://goo.gl/qjbq9Y"} Google Nexus Website Menu
+
+              
           / /scroller-inner
         / /scroller
       / /pusher

@@ -21,6 +21,29 @@
 	margin-right: 0.6em;
 	-webkit-font-smoothing: antialiased;
 }
+
+.glyphicon {
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	display: inline-block;
+	margin-right: 0.6em;
+	-webkit-font-smoothing: antialiased;
+}
+.glyphicon:before {
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	display: inline-block;
+	margin-right: 0.6em;
+	-webkit-font-smoothing: antialiased;
+}
 .icon-female:before {
 	content: "\f182";
 }
