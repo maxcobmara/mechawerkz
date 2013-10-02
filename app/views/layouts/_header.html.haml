@@ -11,16 +11,39 @@
         %span.icon-bar
         
       .collapse.navbar-collapse.navbar-ex1-collapse
-        %ul.nav.navbar-nav.pull-right
-          //- if I18n.locale == I18n.default_locale
-          //  %li= link_to image_tag("MY.png", :border => 0, :title => 'Bahasa Malaysia'), locale: "ms_MY"
-          //- else
-          //  %li= link_to image_tag("GB.png", :border => 0, :title => 'English'), locale: "en"
-          %li= link_to "Home",    '#'
-          %li= link_to "Help",    help_path
-          %li= link_to "Sign in", new_user_session_path
+        %div
+          %ul.nav.navbar-nav.pull-right
+            //- if I18n.locale == I18n.default_locale
+            //  %li= link_to image_tag("MY.png", :border => 0, :title => 'Bahasa Malaysia'), locale: "ms_MY"
+            //- else
+            //  %li= link_to image_tag("GB.png", :border => 0, :title => 'English'), locale: "en"
+            %li.dropdown{:id => "fat-menu"}
+              %a#dLabel{:href => "#", "data-target" => "#", "data-toggle" => "dropdown", :role => "button", :class => "dropdown-toggle"}
+                Dropdown <b class="caret"></b>
+              %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+                %li{:role => "presentation"}
+                  %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Action
+                %li{:role => "presentation"}
+                  %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Another action
+                %li{:role => "presentation"}
+                  %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Something else here
+                %li.divider{:role => "presentation"}
+                %li{:role => "presentation"}
+                  %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Separated link
+            %li= link_to "Home",    root_path
+            %li= link_to "Help",    help_path
+            - if user_signed_in?
+            - else
+              %li= link_to "Sign in", new_user_session_path
+
+
           
 //%script{:src => "classie.js"}
 //%script{:src => "mlpushmenu.js"}
 //:javascript
 //  new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+
+:javascript
+  $(document).ready(function()  {
+    ;
+  });
