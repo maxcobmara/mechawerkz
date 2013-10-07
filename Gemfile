@@ -4,7 +4,7 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 gem "thin", "~> 1.5.1"
-gem 'devise'
+gem 'devise', "~> 3.1.1"
 #gem 'bootstrap-sass', '~> 2.3.2.0'
 gem "bootstrap-sass-rails", "~> 3.0.0.2"
 gem "the_role", "~> 2.1.1"
@@ -13,7 +13,7 @@ gem "the_role", "~> 2.1.1"
 gem 'sass-rails', '~> 4.0.0'  # Use SCSS for stylesheets
 gem 'uglifier', '~> 2.1.1'  # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.0'  # Use CoffeeScript for .js.coffee assets and views
-gem 'jquery-rails', '~> 2.2.1'  # Use jquery as the JavaScript library
+gem 'jquery-rails', '~> 3.0.4'  # Use jquery as the JavaScript library
 gem 'turbolinks', '~> 1.1.1'  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 1.2'  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "haml", "~> 4.0.3"
@@ -25,7 +25,7 @@ gem "haml", "~> 4.0.3"
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem "rspec-rails", "~> 2.14.0"
-  gem 'guard-rspec', "~> 2.5.0"
+  gem 'guard-rspec', "~> 2.5.4"
 end
 
 group :test do

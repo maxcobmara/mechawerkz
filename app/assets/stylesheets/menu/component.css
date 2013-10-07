@@ -1,4 +1,4 @@
-/**,
+*,
 *:after,
 *::before {
     -webkit-box-sizing: border-box;
@@ -9,6 +9,8 @@
 html, body, .container, .scroller {
 	height: 100%;
 }
+
+.container {max-width: none !important;}
 
 .scroller {
 	overflow-y: scroll;
@@ -22,14 +24,39 @@ html, body, .container, .scroller {
 .container {
 	position: relative;
 	overflow: hidden;
-	background: #34495e;
+	/*background: #34495e;*/
 }
 
 .menu-trigger {
+	float: left;
 	position: relative;
-	padding-left: 60px;
-	font-size: 0.9em;
+	/*padding-left: 60px;*/
+	font-size: 1.7em;
+	font-color: white;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding-top: 9px;
+	font-weight: bold;
+	line-height: 1;
+	&:hover {color: white; text-decoration: none;}
 }
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 
 .menu-trigger:before {
 	position: absolute;
@@ -37,9 +64,11 @@ html, body, .container, .scroller {
 	left: 0;
 	width: 40px;
 	height: 6px;
-	background: #fff;
+	/*background: #fff;*/
+	/*
 	box-shadow: 0 6px #34495e, 0 12px #fff, 0 18px #34495e, 0 24px #fff;
-	content: '';
+		content: '';*/
+	
 }
 
 .mp-pusher {
@@ -49,7 +78,7 @@ html, body, .container, .scroller {
 }
 
 .mp-menu {
-	position: absolute; /* we can't use fixed here :( *//*
+	position: absolute; /* we can't use fixed here :( */
 	top: 0;
 	left: 0;
 	z-index: 1;
@@ -72,7 +101,7 @@ html, body, .container, .scroller {
 	transform: translate3d(-100%, 0, 0);
 }
 
-/* overlays for pusher and for level that gets covered *//*
+/* overlays for pusher and for level that gets covered */
 .mp-pusher::after,
 .mp-level::after,
 .mp-level::before {
@@ -125,7 +154,7 @@ html, body, .container, .scroller {
 	transition: all 0.5s;
 }
 
-/* overlap *//*
+/* overlap */
 .mp-overlap .mp-level.mp-level-open {
 	box-shadow: 1px 0 2px rgba(0,0,0,0.2);
 	-webkit-transform: translate3d(-40px, 0, 0);
@@ -133,7 +162,7 @@ html, body, .container, .scroller {
 	transform: translate3d(-40px, 0, 0);
 }
 
-/* First level *//*
+/* First level */
 .mp-menu > .mp-level,
 .mp-menu > .mp-level.mp-level-open,
 .mp-menu.mp-overlap > .mp-level,
@@ -144,7 +173,7 @@ html, body, .container, .scroller {
 	transform: translate3d(0, 0, 0);
 }
 
-/* cover *//*
+/* cover */
 .mp-cover .mp-level.mp-level-open {
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
@@ -157,7 +186,7 @@ html, body, .container, .scroller {
 	transform: translate3d(-100%, 0, 0);
 }
 
-/* content style *//*
+/* content style */
 .mp-menu ul {
 	margin: 0;
 	padding: 0;
@@ -275,7 +304,7 @@ html, body, .container, .scroller {
 }
 
 /* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
-/* We'll show the first level only *//*
+/* We'll show the first level only */
 .no-csstransforms3d .mp-pusher,
 .no-js .mp-pusher {
 	padding-left: 300px;
