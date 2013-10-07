@@ -27,6 +27,12 @@
     <%= f.label :state %><br>
     <%= f.text_field :state %>
   </div>
+  
+  <%= f.fields_for :contact_mediums do |builder| %>
+    <%= render 'contact_medium_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Contact Item", f, :contact_mediums %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

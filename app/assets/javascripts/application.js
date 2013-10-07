@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require global
 //= require_tree .
 
 $(document).ready(function(){
