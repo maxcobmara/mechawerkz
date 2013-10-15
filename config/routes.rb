@@ -1,5 +1,7 @@
 Mechawerkz::Application.routes.draw do
   
+  resources :staffs
+
   #get "users/index"
   resources :contact_medium_types
 

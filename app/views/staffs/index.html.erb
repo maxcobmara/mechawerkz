@@ -1,0 +1,63 @@
+<h1>Listing staffs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id no</th>
+      <th>Name</th>
+      <th>Kwsp code</th>
+      <th>Tax code</th>
+      <th>Access</th>
+      <th>Title</th>
+      <th>File</th>
+      <th>User</th>
+      <th>Date of birth</th>
+      <th>State</th>
+      <th>Country code</th>
+      <th>Citizenship</th>
+      <th>Birth cert</th>
+      <th>Gravatar email</th>
+      <th>Blood type</th>
+      <th>Marital status type</th>
+      <th>Race</th>
+      <th>Religion</th>
+      <th>Gender</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @staffs.each do |staff| %>
+      <tr>
+        <td><%= staff.id_no %></td>
+        <td><%= staff.name %></td>
+        <td><%= staff.kwsp_code %></td>
+        <td><%= staff.tax_code %></td>
+        <td><%= staff.access_id %></td>
+        <td><%= staff.title_id %></td>
+        <td><%= staff.file_id %></td>
+        <td><%= staff.user_id %></td>
+        <td><%= staff.date_of_birth %></td>
+        <td><%= staff.state %></td>
+        <td><%= staff.country_code %></td>
+        <td><%= staff.citizenship %></td>
+        <td><%= staff.birth_cert %></td>
+        <td><%= staff.gravatar_email %></td>
+        <td><%= staff.blood_type %></td>
+        <td><%= staff.marital_status_type %></td>
+        <td><%= staff.race %></td>
+        <td><%= staff.religion %></td>
+        <td><%= staff.gender %></td>
+        <td><%= link_to 'Show', staff %></td>
+        <td><%= link_to 'Edit', edit_staff_path(staff) %></td>
+        <td><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Staff', new_staff_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918160802) do
+ActiveRecord::Schema.define(version: 20131015192137) do
 
   create_table "contact_companies", force: true do |t|
     t.string   "name"
@@ -50,6 +50,30 @@ ActiveRecord::Schema.define(version: 20130918160802) do
     t.string   "title",       null: false
     t.text     "description", null: false
     t.text     "the_role",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "staffs", force: true do |t|
+    t.string   "id_no"
+    t.string   "name"
+    t.string   "kwsp_code"
+    t.string   "tax_code"
+    t.integer  "access_id"
+    t.integer  "title_id"
+    t.integer  "file_id"
+    t.integer  "user_id"
+    t.date     "date_of_birth"
+    t.integer  "state"
+    t.string   "country_code"
+    t.string   "citizenship"
+    t.string   "birth_cert"
+    t.string   "gravatar_email"
+    t.string   "blood_type"
+    t.string   "marital_status_type"
+    t.integer  "race"
+    t.integer  "religion"
+    t.string   "gender"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

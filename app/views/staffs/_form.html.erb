@@ -1,0 +1,93 @@
+<%= form_for(@staff) do |f| %>
+  <% if @staff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
+
+      <ul>
+      <% @staff.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_no %><br>
+    <%= f.text_field :id_no %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :kwsp_code %><br>
+    <%= f.text_field :kwsp_code %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_code %><br>
+    <%= f.text_field :tax_code %>
+  </div>
+  <div class="field">
+    <%= f.label :access_id %><br>
+    <%= f.number_field :access_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title_id %><br>
+    <%= f.number_field :title_id %>
+  </div>
+  <div class="field">
+    <%= f.label :file_id %><br>
+    <%= f.number_field :file_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br>
+    <%= f.date_select :date_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.number_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :country_code %><br>
+    <%= f.text_field :country_code %>
+  </div>
+  <div class="field">
+    <%= f.label :citizenship %><br>
+    <%= f.text_field :citizenship %>
+  </div>
+  <div class="field">
+    <%= f.label :birth_cert %><br>
+    <%= f.text_field :birth_cert %>
+  </div>
+  <div class="field">
+    <%= f.label :gravatar_email %><br>
+    <%= f.text_field :gravatar_email %>
+  </div>
+  <div class="field">
+    <%= f.label :blood_type %><br>
+    <%= f.text_field :blood_type %>
+  </div>
+  <div class="field">
+    <%= f.label :marital_status_type %><br>
+    <%= f.text_field :marital_status_type %>
+  </div>
+  <div class="field">
+    <%= f.label :race %><br>
+    <%= f.number_field :race %>
+  </div>
+  <div class="field">
+    <%= f.label :religion %><br>
+    <%= f.number_field :religion %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

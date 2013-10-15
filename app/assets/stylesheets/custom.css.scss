@@ -91,6 +91,11 @@ a:hover, a:focus {
 
 .navbar-fixed-top {z-index:9999;}
 
+.mp-menu {
+	a {text-decoration: none; color: #FFF; outline: none;
+		&:hover, &:focus {}
+	}	
+}
 
 
 /*

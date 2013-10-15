@@ -11,6 +11,15 @@
             %li
               %a.glyphicon.glyphicon-phone-alt{:href => contact_companies_path} Companies
             %li= link_to "People", contact_people_path, :class => "glyphicon glyphicon-phone"
+            %li= link_to "Types", contact_medium_types_path, :class => "glyphicon glyphicon-tags"
+      
+      %li.icon.icon-arrow-left
+        %a.glyphicon.glyphicon-pushpin{:href => "#"} Staff
+        .mp-level
+          %h2.icon Staff
+          %a.mp-back{:href => "#"} back
+          %ul
+            %li= link_to "Staff", staffs_path, :class => "glyphicon glyphicon-pushpin"
       
       %li.icon.icon-arrow-left
         %a.icon.icon-display{:href => "#"} Devices
