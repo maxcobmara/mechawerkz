@@ -38,7 +38,6 @@ textarea {
 
 
 
-
 .center {
   text-align: center;
   h1 {
@@ -189,7 +188,7 @@ footer {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 80%;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   @include box_sizing;
 }
 
@@ -204,8 +203,14 @@ input {
 }
 input[type=checkbox] {width:13px; height:13px; *overflow: hidden; }
 .form-group {
-	padding: 1em 0;
+	padding: 3px 0; margin-bottom: 0; margin-top: 0;
 }
+.form-inline  {
+	.form-group {
+		padding: 3px 15px; margin-bottom: 0; margin-top: 0;
+	}
+}
+  
 .btn {width: 30%; margin-bottom: 1.5em;}
 
 

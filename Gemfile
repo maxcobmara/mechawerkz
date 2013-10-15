@@ -10,6 +10,7 @@ gem "bootstrap-sass-rails", "~> 3.0.0.2"
 gem "the_role", "~> 2.1.1"
 
 
+
 gem 'sass-rails', '~> 4.0.0'  # Use SCSS for stylesheets
 gem 'uglifier', '~> 2.1.1'  # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.0'  # Use CoffeeScript for .js.coffee assets and views
