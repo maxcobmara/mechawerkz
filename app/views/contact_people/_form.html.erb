@@ -30,6 +30,14 @@
     <%= f.text_field :position, :class => 'form-control' %>
   </div><br>
 
+<div class="form-group">
+<div class="col-lg-offset-2 col-lg-10">
+<%= f.fields_for :contact_medium_types do |builder| %>
+<% end %>
+<%= link_to 'New Contact medium type', new_contact_medium_type_path %>
+</div>
+</div>
+
   <div class="form-action">
 	<div class="col-lg-offset-2 col-lg-10">
     <%= f.submit nil, :class => "btn btn-primary" %>
