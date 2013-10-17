@@ -1,2 +1,4 @@
 class ContactPerson < ActiveRecord::Base
-end
+
+  
+  end
