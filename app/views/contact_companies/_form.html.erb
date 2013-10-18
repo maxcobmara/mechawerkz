@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+<<<<<<< HEAD
   
   <div class="form-group">
     <%= f.label :name, :class => 'col-lg-2 control-label' %>
@@ -48,5 +49,26 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => "btn btn-primary" %>
     </div>
+=======
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div><br>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div><br>
+  <div class="field">
+    <%= f.label :postcode %><br>
+    <%= f.text_field :postcode %>
+  </div><br>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+>>>>>>> f75a177976697363dcc7be7d0d9ead86388432a6
   </div>
 <% end %>

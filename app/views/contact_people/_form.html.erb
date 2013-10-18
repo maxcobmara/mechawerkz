@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<<<<<<< HEAD
   <div class="form-group">
     <%= f.label :name, :class => 'col-lg-2 control-label' %><br>
     <div class="col-lg-6">
@@ -44,5 +45,21 @@
 	<div class="col-lg-offset-2 col-lg-10">
     <%= f.submit nil, :class => "btn btn-primary" %>
 	</div>
+=======
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div><br>
+  <div class="field">
+    <%= f.label :company_id %><br>
+    <%= f.text_field :company_id %>
+  </div><br>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+>>>>>>> f75a177976697363dcc7be7d0d9ead86388432a6
   </div>
 <% end %>
