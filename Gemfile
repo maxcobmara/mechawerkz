@@ -8,6 +8,7 @@ gem 'devise', "~> 3.1.1"
 #gem 'bootstrap-sass', '~> 2.3.2.0'
 gem "bootstrap-sass-rails", "~> 3.0.0.2"
 gem "the_role", "~> 2.1.1"
+gem "ancestry", "~> 2.0.0"
 
 
 
@@ -18,6 +19,7 @@ gem 'jquery-rails', '~> 3.0.4'  # Use jquery as the JavaScript library
 gem 'turbolinks', '~> 1.1.1'  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 1.2'  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "haml", "~> 4.0.3"
+
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
