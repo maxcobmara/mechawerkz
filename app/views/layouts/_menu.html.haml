@@ -3,23 +3,23 @@
     %h2.icon.icon-world All Categories
     %ul
       %li.icon.icon-arrow-left
-        %a.glyphicon.glyphicon-book{:href => "#"} Contacts
+        %a.icon.icon-female{:href => "#"} Contacts
         .mp-level
-          %h2.icon Contacts
+          %h2.icon.icon-female Contacts
           %a.mp-back{:href => "#"} back
           %ul
             %li
-              %a.glyphicon.glyphicon-phone-alt{:href => contact_companies_path} Companies
-            %li= link_to "People", contact_people_path, :class => "glyphicon glyphicon-phone"
-            %li= link_to "Types", contact_medium_types_path, :class => "glyphicon glyphicon-tags"
+              %a.icon.icon-phone{:href => contact_companies_path} Companies
+            %li= link_to "People", contact_people_path, :class => "icon icon-phone"
+            %li= link_to "Types", contact_medium_types_path, :class => "icon icon-mail"
       
       %li.icon.icon-arrow-left
-        %a.glyphicon.glyphicon-pushpin{:href => "#"} Staff
+        %a.icon.icon-star{:href => "#"} Staff
         .mp-level
           %h2.icon Staff
           %a.mp-back{:href => "#"} back
           %ul
-            %li= link_to "Staff", staffs_path, :class => "glyphicon glyphicon-pushpin"
+            %li= link_to "Staff", staffs_path, :class => "icon icon-star"
       
       %li.icon.icon-arrow-left
         %a.icon.icon-display{:href => "#"} Devices
@@ -140,28 +140,20 @@
       %li
         %a.icon.icon-photo{:href => "#"} Collections
       %li.icon.icon-arrow-left
-        %a{:href => "#"} 
-          .glyphicon.glyphicon-tower Admin
+        %a.icon.icon-settings{:href => "#"} Admin
         .mp-level
           //%h2.icon.icon-shop Admin
-          %h2
-            .glyphicon.glyphicon-tower Admin
+          %h2.icon.icon-settings Admin
           %a.mp-back{:href => "#"} back
           %ul
-            %li
-              %a{:href => "/users"} 
-                .glyphicon.glyphicon-user Users
-            %li
-              %a{:href => admin_roles_path} 
-                .glyphicon.glyphicon-star Roles
+            %li= link_to "Users", users_path, :class => "icon icon-male"
+            %li= link_to "Roles", admin_roles_path, :class => "icon icon-t-shirt"
               
       %li.icon.icon-arrow-left
-        %a{:href => "#"} 
-          .glyphicon.glyphicon-user Account
+        %a.icon.icon-key{:href => "#"} Account
         .mp-level
           //%h2.icon.icon-shop Admin
-          %h2
-            .glyphicon.glyphicon-user Account
+          %h2.icon.icon-key Account
           %a.mp-back{:href => "#"} back
           %ul
             - if user_signed_in?

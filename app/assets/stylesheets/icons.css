@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'linecons';
-	src:url('../fonts/linecons/linecons.eot');
-	src:url('../fonts/linecons/linecons.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/linecons/linecons.woff') format('woff'),
-		url('../fonts/linecons/linecons.ttf') format('truetype'),
-		url('../fonts/linecons/linecons.svg#linecons') format('svg');
+	src:url('linecons.eot');
+	src:url('linecons.eot?#iefix') format('embedded-opentype'),
+		url('linecons.woff') format('woff'),
+		url('linecons.ttf') format('truetype'),
+		url('linecons.svg#linecons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
