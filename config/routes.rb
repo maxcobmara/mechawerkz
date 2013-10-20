@@ -1,5 +1,7 @@
 Mechawerkz::Application.routes.draw do
   
+  resources :staff_positions
+
   resources :staffs
 
   #get "users/index"

@@ -1,7 +1,8 @@
 <%= form_for @contact_person, :html => {:class => 'form-horizontal'}  do |f| %>
   <% if @contact_person.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contact_person.errors.count, "error") %> prohibited this contact_person from being saved:</h2>
+      <h2><%= pluralize(@contact_person.errors.count, "error") %> 
+          prohibited this contact_person from being saved:</h2>
 
       <ul>
       <% @contact_person.errors.full_messages.each do |msg| %>
@@ -11,55 +12,32 @@
     </div>
   <% end %>
 
-<<<<<<< HEAD
   <div class="form-group">
-    <%= f.label :name, :class => 'col-lg-2 control-label' %><br>
+    <%= f.label :name, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-	<%= f.text_field :name, :class => 'form-control' %>
-	</div>
+	    <%= f.text_field :name, :class => 'form-control' %>
+	  </div>
   </div>
-
+  
   <div class="form-group">
-    <%= f.label :company_id, :class => 'col-lg-2 control-label' %><br>
-    <div class="col-lg-6">
-	<%= f.text_field :company_id, :class => 'form-control' %>
-</div>
-  </div>
-  <div class="form-group">
-    <%= f.label :position, :class => 'col-lg-2 control-label' %><br>
-	<div class="col-lg-6">
-    <%= f.text_field :position, :class => 'form-control' %>
+    <%= f.label :position, :class => 'col-lg-2 control-label' %>
+	  <div class="col-lg-6">
+      <%= f.text_field :position, :class => 'form-control' %>
   </div><br>
 
-<div class="form-group">
+  <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.fields_for :contact_medium_types do |builder| %>
-        <%= render 'contact_medium_types_fields', f: builder %>
+      <%= f.fields_for :contact_mediums do |builder| %>
+        <%= render 'shared/contact_medium_fields', f: builder %>
       <% end %>
-      <%= link_to_add_fields "Add Contact medium", f, :contact_medium_types %>
+      <%= link_to_add_fields "Add Contact Item", f, :contact_mediums %>
     </div>
   </div>
 
 
   <div class="form-action">
-	<div class="col-lg-offset-2 col-lg-10">
-    <%= f.submit nil, :class => "btn btn-primary" %>
-	</div>
-=======
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div><br>
-  <div class="field">
-    <%= f.label :company_id %><br>
-    <%= f.text_field :company_id %>
-  </div><br>
-  <div class="field">
-    <%= f.label :position %><br>
-    <%= f.text_field :position %>
-  </div><br>
-  <div class="actions">
-    <%= f.submit %>
->>>>>>> f75a177976697363dcc7be7d0d9ead86388432a6
+  	<div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => "btn btn-primary" %>
+  	</div>
   </div>
 <% end %>

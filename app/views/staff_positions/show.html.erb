@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @staff_position.code %>
+</p>
+
+<p>
+  <strong>Combo code:</strong>
+  <%= @staff_position.combo_code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @staff_position.name %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @staff_position.unit %>
+</p>
+
+<p>
+  <strong>Tasks main:</strong>
+  <%= @staff_position.tasks_main %>
+</p>
+
+<p>
+  <strong>Tasks other:</strong>
+  <%= @staff_position.tasks_other %>
+</p>
+
+<p>
+  <strong>Ancestry:</strong>
+  <%= @staff_position.ancestry %>
+</p>
+
+<p>
+  <strong>Ancestry depth:</strong>
+  <%= @staff_position.ancestry_depth %>
+</p>
+
+<p>
+  <strong>Is acting:</strong>
+  <%= @staff_position.is_acting %>
+</p>
+
+<p>
+  <strong>Staff grade min:</strong>
+  <%= @staff_position.staff_grade_min %>
+</p>
+
+<p>
+  <strong>Staff:</strong>
+  <%= @staff_position.staff_id %>
+</p>
+
+<%= link_to 'Edit', edit_staff_position_path(@staff_position) %> |
+<%= link_to 'Back', staff_positions_path %>

@@ -1,0 +1,47 @@
+<h1>Listing staff_positions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Combo code</th>
+      <th>Name</th>
+      <th>Unit</th>
+      <th>Tasks main</th>
+      <th>Tasks other</th>
+      <th>Ancestry</th>
+      <th>Ancestry depth</th>
+      <th>Is acting</th>
+      <th>Staff grade min</th>
+      <th>Staff</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @staff_positions.each do |staff_position| %>
+      <tr>
+        <td><%= staff_position.code %></td>
+        <td><%= staff_position.combo_code %></td>
+        <td><%= staff_position.name %></td>
+        <td><%= staff_position.unit %></td>
+        <td><%= staff_position.tasks_main %></td>
+        <td><%= staff_position.tasks_other %></td>
+        <td><%= staff_position.ancestry %></td>
+        <td><%= staff_position.ancestry_depth %></td>
+        <td><%= staff_position.is_acting %></td>
+        <td><%= staff_position.staff_grade_min %></td>
+        <td><%= staff_position.staff_id %></td>
+        <td><%= link_to 'Show', staff_position %></td>
+        <td><%= link_to 'Edit', edit_staff_position_path(staff_position) %></td>
+        <td><%= link_to 'Destroy', staff_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Staff position', new_staff_position_path %>

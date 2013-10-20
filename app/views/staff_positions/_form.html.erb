@@ -1,0 +1,61 @@
+<%= form_for(@staff_position) do |f| %>
+  <% if @staff_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@staff_position.errors.count, "error") %> prohibited this staff_position from being saved:</h2>
+
+      <ul>
+      <% @staff_position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :combo_code %><br>
+    <%= f.text_field :combo_code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br>
+    <%= f.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= f.label :tasks_main %><br>
+    <%= f.text_area :tasks_main %>
+  </div>
+  <div class="field">
+    <%= f.label :tasks_other %><br>
+    <%= f.text_area :tasks_other %>
+  </div>
+  <div class="field">
+    <%= f.label :ancestry %><br>
+    <%= f.text_field :ancestry %>
+  </div>
+  <div class="field">
+    <%= f.label :ancestry_depth %><br>
+    <%= f.number_field :ancestry_depth %>
+  </div>
+  <div class="field">
+    <%= f.label :is_acting %><br>
+    <%= f.check_box :is_acting %>
+  </div>
+  <div class="field">
+    <%= f.label :staff_grade_min %><br>
+    <%= f.number_field :staff_grade_min %>
+  </div>
+  <div class="field">
+    <%= f.label :staff_id %><br>
+    <%= f.number_field :staff_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

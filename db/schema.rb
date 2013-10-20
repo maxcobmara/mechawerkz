@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015192137) do
+ActiveRecord::Schema.define(version: 20131020113843) do
 
   create_table "contact_companies", force: true do |t|
     t.string   "name"
@@ -53,6 +53,24 @@ ActiveRecord::Schema.define(version: 20131015192137) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "staff_positions", force: true do |t|
+    t.string   "code"
+    t.string   "combo_code"
+    t.string   "name"
+    t.string   "unit"
+    t.text     "tasks_main"
+    t.text     "tasks_other"
+    t.string   "ancestry"
+    t.integer  "ancestry_depth"
+    t.boolean  "is_acting"
+    t.integer  "staff_grade_min"
+    t.integer  "staff_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "staff_positions", ["code", "ancestry"], name: "index_staff_positions_on_code_and_ancestry"
 
   create_table "staffs", force: true do |t|
     t.string   "id_no"
