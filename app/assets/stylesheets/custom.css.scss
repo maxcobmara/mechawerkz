@@ -196,6 +196,7 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 5px;
   @include box_sizing;
 }
+select {height: 2.25em; padding-top:5px;}
 
 label {
     display: block;

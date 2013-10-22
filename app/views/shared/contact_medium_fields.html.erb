@@ -1,0 +1,16 @@
+<fieldset style="border:0; ">
+  <div class="form-inline">
+    <div class="form-group">
+      <%= f.label :medium_type, :class => 'sr-only' %>
+      <%= f.text_field :medium_type, :class => 'form-control', :placeholder => "Select Type" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :medium, :class => 'sr-only' %>
+      <%= f.text_field :medium, :class => 'form-control', :placeholder => "Contact Info" %>
+    </div>
+    <div class="form-group">
+      <%= f.hidden_field :_destroy %>
+      <%= link_to "remove", '#', class: "remove_fields" %>
+    </div>
+  </div>
+</fieldset>
