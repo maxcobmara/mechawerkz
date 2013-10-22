@@ -36,7 +36,7 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.fields_for :contact_mediums do |builder| %>
-        <%= render 'shared/contact_medium_fields', f: builder %>
+        <%= render 'contact_medium_fields', f: builder %>
       <% end %>
       <%= link_to_add_fields "Add Contact Item", f, :contact_mediums %>
     </div>
