@@ -1,6 +1,6 @@
-<h1>Listing contact_medium_types</h1>
+<h1>Listing contact medium types</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Description</th>
@@ -14,9 +14,11 @@
     <% @contact_medium_types.each do |contact_medium_type| %>
       <tr>
         <td><%= contact_medium_type.description %></td>
-        <td><%= link_to 'Show', contact_medium_type %></td>
-        <td><%= link_to 'Edit', edit_contact_medium_type_path(contact_medium_type) %></td>
-        <td><%= link_to 'Destroy', contact_medium_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<div class="btn-group">
+        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', contact_medium_type %></td>
+        <td> <button type="button" class="btn btn-primary btn-sm"> <%= link_to 'Edit', edit_contact_medium_type_path(contact_medium_type) %></td>
+        <td> <button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', contact_medium_type, method: :delete, data: { confirm: 'Are you sure?' } %>
+</td></div>
       </tr>
     <% end %>
   </tbody>
