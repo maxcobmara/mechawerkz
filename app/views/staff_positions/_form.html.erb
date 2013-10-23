@@ -1,4 +1,4 @@
-<%= form_for(@staff_position) do |f| %>
+<%= form_for @staff_position, :html => { :class => 'form-horizontal'} do |f| %>
   <% if @staff_position.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@staff_position.errors.count, "error") %> prohibited this staff_position from being saved:</h2>
@@ -11,51 +11,89 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :code %><br>
-    <%= f.text_field :code %>
+   <div class="form-group">
+    <%= f.label :code, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :code, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :combo_code %><br>
-    <%= f.text_field :combo_code %>
+
+ <div class="form-group">
+    <%= f.label :combo_code, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :combo_code, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+
+
+ <div class="form-group">
+    <%= f.label :position_name, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :unit %><br>
-    <%= f.text_field :unit %>
+
+   <div class="form-group">
+    <%= f.label :unit, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :unit, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :tasks_main %><br>
-    <%= f.text_area :tasks_main %>
+
+
+ <div class="form-group">
+    <%= f.label :tasks_main, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_area :tasks_main, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :tasks_other %><br>
-    <%= f.text_area :tasks_other %>
+
+
+ <div class="form-group">
+    <%= f.label :tasks_other, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_area :tasks_other, :class => 'form-control'%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ancestry %><br>
-    <%= f.text_field :ancestry %>
+
+   <div class="form-group">
+    <%= f.label :ancestry, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :ancestry, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ancestry_depth %><br>
-    <%= f.number_field :ancestry_depth %>
+
+  <div class="form-group">
+    <%= f.label :ancestry_depth, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :ancestry_depth, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :is_acting %><br>
-    <%= f.check_box :is_acting %>
+
+  <div class="form-group">
+    <%= f.label :is_acting, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.check_box :is_acting, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :staff_grade_min %><br>
-    <%= f.number_field :staff_grade_min %>
+
+   <div class="form-group">
+    <%= f.label :staff_grade_min, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :staff_grade_min, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :staff_id %><br>
-    <%= f.number_field :staff_id %>
+
+   <div class="form-group">
+    <%= f.label :staff_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :staff_id, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+   <div class="form-actions">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => "btn btn-primary" %>
+    </div>
+
 <% end %>
