@@ -1,99 +1,88 @@
+<% provide(:title, 'Staff Details') %>
+<%- model_class = Staff -%>
+<div class="page-header">
+   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id no:</strong>
-  <%= @staff.id_no %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @staff.name %>
-</p>
+<dl class="dl-horizontal">
+ <dt> <strong><%= model_class.human_attribute_name(:ID_No) %>:</strong></dt>
+  <dd><%= @staff.id_no %></dd>
 
-<p>
-  <strong>Kwsp code:</strong>
-  <%= @staff.kwsp_code %>
-</p>
 
-<p>
-  <strong>Tax code:</strong>
-  <%= @staff.tax_code %>
-</p>
+ <dt> <strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @staff.name %></dd>
 
-<p>
-  <strong>Access:</strong>
-  <%= @staff.access_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @staff.title_id %>
-</p>
+<dt>  <strong><%= model_class.human_attribute_name(:Kwsp_code) %>:</strong></dt>
+  <dd><%= @staff.kwsp_code %></dd>
 
-<p>
-  <strong>File:</strong>
-  <%= @staff.file_id %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @staff.user_id %>
-</p>
+  <dt><strong><%= model_class.human_attribute_name(:Tax_code) %>:</strong><dt>
+  <dd><%= @staff.tax_code %></dd>
 
-<p>
-  <strong>Date of birth:</strong>
-  <%= @staff.date_of_birth %>
-</p>
 
-<p>
-  <strong>State:</strong>
-  <%= @staff.state %>
-</p>
+ <dt> <strong><%= model_class.human_attribute_name(:Access) %>:</strong></dt>
+  <dd><%= @staff.access_id %></dd>
 
-<p>
-  <strong>Country code:</strong>
-  <%= @staff.country_code %>
-</p>
 
-<p>
-  <strong>Citizenship:</strong>
-  <%= @staff.citizenship %>
-</p>
+  <dt><strong><%= model_class.human_attribute_name(:Title) %>:</strong></dt>
+  <dd><%= @staff.title_id %></dd>
 
-<p>
-  <strong>Birth cert:</strong>
-  <%= @staff.birth_cert %>
-</p>
 
-<p>
-  <strong>Gravatar email:</strong>
-  <%= @staff.gravatar_email %>
-</p>
+<dt>  <strong><%= model_class.human_attribute_name(:File) %>:</strong></dt>
+  <dd><%= @staff.file_id %></dd>
 
-<p>
-  <strong>Blood type:</strong>
-  <%= @staff.blood_type %>
-</p>
 
-<p>
-  <strong>Marital status type:</strong>
-  <%= @staff.marital_status_type %>
-</p>
+ <dt> <strong><%= model_class.human_attribute_name(:user) %>:</strong></dt>
+  <dd><%= @staff.user_id %></dd>
 
-<p>
-  <strong>Race:</strong>
-  <%= @staff.race %>
-</p>
 
-<p>
-  <strong>Religion:</strong>
-  <%= @staff.religion %>
-</p>
+ <dt> <strong><%= model_class.human_attribute_name(:Date_of_birth) %>:</strong></dt>
+  <dd><%= @staff.date_of_birth %></dd>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @staff.gender %>
-</p>
+
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @staff.state %></dd>
+
+
+ <dt> <strong><%= model_class.human_attribute_name(:country_code) %>:</strong></dt>
+  <dd><%= @staff.country_code %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:citizenship) %>:</strong></dt>
+  <dd><%= @staff.citizenship %></dd>
+
+
+ <dt> <strong><%= model_class.human_attribute_name(:birth_cert) %>:</strong></dt>
+  <dd><%= @staff.birth_cert %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:gravatar_email) %>:</strong></dt>
+  <dd><%= @staff.gravatar_email %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:blood_type) %>:</strong></dt>
+  <dd><%= @staff.blood_type %></dd>
+
+
+ <dt> <strong><%= model_class.human_attribute_name(:marital_status_type) %>:</strong></dt>
+  <dd><%= @staff.marital_status_type %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:race) %>:</strong></dt>
+  <dd><%= @staff.race %></dd>
+
+
+ <dt> <strong><%= model_class.human_attribute_name(:religion) %>:</strong></dt>
+  <dd><%= @staff.religion %></dd>
+
+
+ <dt> <strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
+  <dd><%= @staff.gender %></dd>
+</dl>
 
 <%= link_to 'Edit', edit_staff_path(@staff) %> |
 <%= link_to 'Back', staffs_path %>

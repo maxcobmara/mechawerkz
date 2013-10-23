@@ -1,4 +1,4 @@
-<%= form_for(@staff) do |f| %>
+<%= form_for @staff, :html => {:class => 'form-horizontal' }  do |f| %>
   <% if @staff.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
@@ -11,83 +11,154 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :id_no %><br>
-    <%= f.text_field :id_no %>
+  <div class="form-group">
+    <%= f.label :id_no, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :id_no, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+   </div>
+
+  <div class="form-group">
+    <%= f.label :name, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :name, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :kwsp_code %><br>
-    <%= f.text_field :kwsp_code %>
+
+  <div class="form-group">
+    <%= f.label :kwsp_code, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :kwsp_code, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :tax_code %><br>
-    <%= f.text_field :tax_code %>
+
+    <div class="form-group">
+    <%= f.label :tax_code, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :tax_code, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :access_id %><br>
-    <%= f.number_field :access_id %>
+
+   <div class="form-group">
+    <%= f.label :access_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :access_id, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :title_id %><br>
-    <%= f.number_field :title_id %>
+
+  <div class="form-group">
+    <%= f.label :title_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :title_id, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :file_id %><br>
-    <%= f.number_field :file_id %>
+
+
+  <div class="form-group">
+    <%= f.label :file_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :file_id, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+
+
+    <div class="form-group">
+    <%= f.label :user_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :user_id, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :date_of_birth %><br>
-    <%= f.date_select :date_of_birth %>
+
+
+   <div class="form-group">
+    <%= f.label :date_of_birth, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.date_select :date_of_birth, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.number_field :state %>
+
+
+    <div class="form-group">
+    <%= f.label :state, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-5">
+    <%= f.number_field :state, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :country_code %><br>
-    <%= f.text_field :country_code %>
+
+
+    <div class="form-group">
+    <%= f.label :country_code, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :country_code, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :citizenship %><br>
-    <%= f.text_field :citizenship %>
+
+
+   <div class="form-group">
+    <%= f.label :citizenship, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :citizenship, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :birth_cert %><br>
-    <%= f.text_field :birth_cert %>
+
+
+    <div class="form-group">
+    <%= f.label :birth_cert, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :birth_cert, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :gravatar_email %><br>
-    <%= f.text_field :gravatar_email %>
+
+
+  <div class="form-group">
+    <%= f.label :gravatar_email, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :gravatar_email, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :blood_type %><br>
-    <%= f.text_field :blood_type %>
+
+
+  <div class="form-group">
+    <%= f.label :blood_type, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :blood_type, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :marital_status_type %><br>
-    <%= f.text_field :marital_status_type %>
+
+   <div class="form-group">
+    <%= f.label :marital_status_type, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :marital_status_type, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :race %><br>
-    <%= f.number_field :race %>
+
+
+   <div class="form-group">
+    <%= f.label :race, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :race, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :religion %><br>
-    <%= f.number_field :religion %>
+
+  <div class="form-group">
+    <%= f.label :religion, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :religion, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+
+
+  <div class="form-group">
+    <%= f.label :gender, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :gender, :class => 'form-control' %>
+	</div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <div class="form-actions">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => "btn btn-primary" %>
+    </div>
+
 <% end %>
