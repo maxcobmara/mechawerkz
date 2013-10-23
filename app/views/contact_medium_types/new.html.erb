@@ -1,5 +1,8 @@
-<h1>New Contact Medium Type</h1>
+<% provide(:title, 'Contact Media Type') %>
+<%- model_class = ContactMediumType -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', contact_medium_types_path %>
