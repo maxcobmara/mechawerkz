@@ -20,9 +20,10 @@
         <td><%= contact_company.address %></td>
         <td><%= contact_company.postcode %></td>
         <td><%= contact_company.state %></td>
-        <td><%= link_to 'Show', contact_company %></td>
-        <td><%= link_to 'Edit', edit_contact_company_path(contact_company) %></td>
-        <td><%= link_to 'Destroy', contact_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<div class="btn-group">
+        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', contact_company %></td>
+        <td><button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_contact_company_path(contact_company) %></td>
+        <td><button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', contact_company, method: :delete, data: { confirm: 'Are you sure?' } %></td></div>
       </tr>
     <% end %>
   </tbody>

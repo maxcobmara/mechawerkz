@@ -1,7 +1,7 @@
 <% provide(:title, 'Company Details') %>
 <%- model_class = ContactCompany -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -13,17 +13,16 @@
 
 	<dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
   <dd><%= @contact_company.address %></dd>
+
+
+<dt><strong><%= model_class.human_attribute_name(:postcode) %>:</strong></dt>
+<dd> <%= @contact_company.postcode %></dd>
+
+
+
+<dt>  <strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @contact_company.state %></dd>
 </dl>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @contact_company.postcode %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @contact_company.state %>
-</p>
 
 
 <%= link_to 'Edit', edit_contact_company_path(@contact_company) %> |
