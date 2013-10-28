@@ -1,0 +1,61 @@
+<%= form_for @document_binder, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @document_binder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@document_binder.errors.count, "error") %> prohibited this document_binder from being saved:</h2>
+
+      <ul>
+      <% @document_binder.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :code, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :code, :class => 'form-control' %>
+    </div>
+  </div>
+
+ <div class="form-group">
+    <%= f.label :description, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :volume, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :volume, :class => 'form-control' %>
+    </div>
+  </div>
+
+ <div class="form-group">
+    <%= f.label :contact_company_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :contact_company_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+ <div class="form-group">
+    <%= f.label :owned_by, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :owned_by, :class => 'form-control' %>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :location_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :location_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+   <div class="form-actions">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => "btn btn-primary" %>
+    </div>
+
+<% end %>

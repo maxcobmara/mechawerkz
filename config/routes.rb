@@ -1,5 +1,7 @@
 Mechawerkz::Application.routes.draw do
   
+  resources :document_binders
+
   resources :staff_positions
 
   resources :staffs

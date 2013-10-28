@@ -1,0 +1,37 @@
+<h1>Listing Document Binders</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Volume</th>
+      <th>Contact company</th>
+      <th>Owned by</th>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @document_binders.each do |document_binder| %>
+      <tr>
+        <td><%= document_binder.code %></td>
+        <td><%= document_binder.description %></td>
+        <td><%= document_binder.volume %></td>
+        <td><%= document_binder.contact_company_id %></td>
+        <td><%= document_binder.owned_by %></td>
+        <td><%= document_binder.location_id %></td>
+        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', document_binder %></td>
+        <td><button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_document_binder_path(document_binder) %></td>
+        <td><button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', document_binder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Document binder', new_document_binder_path %>
