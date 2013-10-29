@@ -28,7 +28,18 @@
   <div class="form-group">
     <%= f.label :volume, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.text_field :volume, :class => 'form-control' %>
+	<select id="volume" class="form-control">
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	<option>6</option>
+	<option>7</option>
+	<option>8</option>
+	<option>9</option>
+	<option>10</option>
+	</select>
     </div>
   </div>
 
@@ -42,7 +53,7 @@
  <div class="form-group">
     <%= f.label :owned_by, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.number_field :owned_by, :class => 'form-control' %>
+      <%= f.collection_select :owned_by, StaffPosition.find(:all), :id, :name, :include_blank=> 'Select owner', :class => 'form-control'  %>
     </div>
   </div>
 

@@ -20,7 +20,9 @@
           %a.mp-back{:href => "#"} back
           %ul
             %li= link_to "Staff", staffs_path, :class => "icon icon-star"
-      
+            %li= link_to "Staff Positions", staffs_path, :class => "icon icon-star"
+  
+
       %li.icon.icon-arrow-left
         %a.icon.icon-display{:href => "#"} Devices
         .mp-level
@@ -150,21 +152,16 @@
             %li= link_to "Roles", admin_roles_path, :class => "icon icon-t-shirt"
         
 
-      %li.icon.icon-arrow-left
-        %a.icon.icon-star{:href => "#"} Files
-        .mp-level
-          //%h2.icon.icon-shop Admin
-          %h2.icon.icon-star Account
-          %a.mp-back{:href => "#"} back
-          %ul
+
 
       %li.icon.icon-arrow-left
-        %a.icon.icon-star{:href => "#"} Document Binder
+        %a.icon.icon-star{:href => "#"} Filing | Document Binder
         .mp-level
-          %h2.icon Staff
+          %h2.icon Filing | Document Binder 
           %a.mp-back{:href => "#"} back
           %ul
             %li= link_to "Document Binder", document_binders_path, :class => "icon icon-star"
+
       %li.icon.icon-arrow-left
 
         %a.icon.icon-key{:href => "#"} Account
@@ -178,4 +175,4 @@
               %li= link_to "Settings", edit_user_registration_path(current_user)
               %li= link_to "Sign out", destroy_user_session_path, method: "delete"
             - else
-              %li= link_to "Sign in", new_user_session_path	 	
+              %li= link_to "Sign in", new_user_session_path                 
