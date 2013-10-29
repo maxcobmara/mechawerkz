@@ -1,3 +1,5 @@
 class StaffPosition < ActiveRecord::Base
   has_ancestry
-end
+  
+  belong_to :document_binder,  :foreign_key => 'position.id', 'position.name'
+  end
