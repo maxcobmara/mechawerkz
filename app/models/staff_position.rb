@@ -7,6 +7,7 @@ class StaffPosition < ActiveRecord::Base
   ## :foreign_key => 'position.id' means database: position, field: id.  this doesnt exist.
   
   has_many :document_binders, foreign_key: 'owned_by'
+  belongs_to :staff, :foreign_key => 'staff_id'
   
   #note plural, so read out loud: Staff Position has many document binders. logic?
   #now with data.  Accountant has many document binders.

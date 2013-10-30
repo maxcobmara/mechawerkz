@@ -66,10 +66,12 @@
     </div>
   </div>
 
-   <div class="form-group">
-    <%= f.label :staff_id, :class => 'col-lg-2 control-label' %>
+
+
+<div class="form-group">
+    <%= f.label :staff, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.number_field :staff_id, :class => 'form-control' %>
+      <%= f.collection_select :staff_id, Staff.find(:all), :id, :name, :include_blank=> 'Select staff', :class => 'form-control'  %>
     </div>
   </div>
 
