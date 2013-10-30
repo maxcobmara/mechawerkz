@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028014748) do
+ActiveRecord::Schema.define(version: 20131030040422) do
 
   create_table "contact_companies", force: true do |t|
     t.string   "name"
@@ -52,6 +52,27 @@ ActiveRecord::Schema.define(version: 20131028014748) do
     t.integer  "contact_company_id"
     t.integer  "owned_by"
     t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documents", force: true do |t|
+    t.string   "ref_no"
+    t.string   "title"
+    t.integer  "project_id"
+    t.integer  "document_category_id"
+    t.string   "type"
+    t.date     "document_date"
+    t.integer  "recieved_from"
+    t.date     "received_on"
+    t.integer  "filed_by"
+    t.integer  "addressed_to"
+    t.text     "description"
+    t.integer  "binder_id"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref no:</strong>
+  <%= @document.ref_no %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @document.project_id %>
+</p>
+
+<p>
+  <strong>Document category:</strong>
+  <%= @document.document_category_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @document.type %>
+</p>
+
+<p>
+  <strong>Document date:</strong>
+  <%= @document.document_date %>
+</p>
+
+<p>
+  <strong>Recieved from:</strong>
+  <%= @document.recieved_from %>
+</p>
+
+<p>
+  <strong>Received on:</strong>
+  <%= @document.received_on %>
+</p>
+
+<p>
+  <strong>Filed by:</strong>
+  <%= @document.filed_by %>
+</p>
+
+<p>
+  <strong>Addressed to:</strong>
+  <%= @document.addressed_to %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @document.description %>
+</p>
+
+<p>
+  <strong>Binder:</strong>
+  <%= @document.binder_id %>
+</p>
+
+<p>
+  <strong>Document file name:</strong>
+  <%= @document.document_file_name %>
+</p>
+
+<p>
+  <strong>Document content type:</strong>
+  <%= @document.document_content_type %>
+</p>
+
+<p>
+  <strong>Document file size:</strong>
+  <%= @document.document_file_size %>
+</p>
+
+<p>
+  <strong>Document updated at:</strong>
+  <%= @document.document_updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

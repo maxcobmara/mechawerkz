@@ -1,0 +1,133 @@
+<%= form_for @document, :html => { :class => 'form-horizontal'} do |f| %>
+  <% if @document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+      <ul>
+      <% @document.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.label :ref_no, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :ref_no, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :title, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :project_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :project_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :document_category_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :document_category_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :type, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :type, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :document_date, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.date_select :document_date, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :recieved_from, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.collection_select :recieved_from, ContactPerson.find(:all), :id, :name, :include_blank=> 'Select Person', :class => 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :received_on, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.date_select :received_on, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :filed_by, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+            <%= f.collection_select :filed_by, Staff.find(:all), :id, :name, :include_blank=> 'Select Staff', :class => 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :addressed_to, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.collection_select :filed_by, Staff.find(:all), :id, :name, :include_blank=> 'Select Staff', :class => 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_area :description, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :binder_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :binder_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :document_file_name, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :document_file_name, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :document_content_type, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :document_content_type, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :document_file_size, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :document_file_size, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :document_updated_at, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.datetime_select :document_updated_at, :class => 'form-control' %>
+    </div>
+  </div>
+
+
+ <div class="form-actions">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => "btn btn-primary" %>
+    </div>
+
+<% end %>

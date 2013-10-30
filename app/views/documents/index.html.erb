@@ -1,0 +1,57 @@
+<h1>Listing documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ref no</th>
+      <th>Title</th>
+      <th>Project</th>
+      <th>Document category</th>
+      <th>Type</th>
+      <th>Document date</th>
+      <th>Recieved from</th>
+      <th>Received on</th>
+      <th>Filed by</th>
+      <th>Addressed to</th>
+      <th>Description</th>
+      <th>Binder</th>
+      <th>Document file name</th>
+      <th>Document content type</th>
+      <th>Document file size</th>
+      <th>Document updated at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.ref_no %></td>
+        <td><%= document.title %></td>
+        <td><%= document.project_id %></td>
+        <td><%= document.document_category_id %></td>
+        <td><%= document.type %></td>
+        <td><%= document.document_date %></td>
+        <td><%= document.recieved_from %></td>
+        <td><%= document.received_on %></td>
+        <td><%= document.filed_by %></td>
+        <td><%= document.addressed_to %></td>
+        <td><%= document.description %></td>
+        <td><%= document.binder_id %></td>
+        <td><%= document.document_file_name %></td>
+        <td><%= document.document_content_type %></td>
+        <td><%= document.document_file_size %></td>
+        <td><%= document.document_updated_at %></td>
+        <td><%= link_to 'Show', document %></td>
+        <td><%= link_to 'Edit', edit_document_path(document) %></td>
+        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Document', new_document_path %>
