@@ -106,7 +106,9 @@
   <div class="form-group">
     <%= f.label :document_content_type, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.text_field :document_content_type, :class => 'form-control' %>
+      
+	Incoming <%= f.check_box :document_content_type, :class => 'form-control'  %> 
+	Outgoing <%= f.check_box :document_content_type, :class => 'form-control'  %> 
     </div>
   </div>
 
