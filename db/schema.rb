@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030040422) do
+ActiveRecord::Schema.define(version: 20131101070953) do
 
   create_table "contact_companies", force: true do |t|
     t.string   "name"
@@ -73,6 +73,18 @@ ActiveRecord::Schema.define(version: 20131030040422) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "customer_ref"
+    t.integer  "company_id"
+    t.date     "start_at"
+    t.date     "end_at"
+    t.decimal  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

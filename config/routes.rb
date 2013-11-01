@@ -1,5 +1,7 @@
 Mechawerkz::Application.routes.draw do
   
+  resources :projects
+
   resources :documents
 
   resources :document_binders
