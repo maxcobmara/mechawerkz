@@ -107,8 +107,8 @@
     <%= f.label :document_content_type, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
       
-	Incoming <%= f.check_box :document_content_type, :class => 'form-control'  %> 
-	Outgoing <%= f.check_box :document_content_type, :class => 'form-control'  %> 
+	Incoming <%= f.radio_button :document_content_type, "incoming" , :class => 'form-control'  %> 
+	Outgoing <%= f.radio_button :document_content_type, "outgoing" , :class => 'form-control'  %> 
     </div>
   </div>
 
