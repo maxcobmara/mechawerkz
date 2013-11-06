@@ -21,3 +21,32 @@
 $(document).ready(function(){
 	$('.dropdown-toggle').dropdown();
 });
+
+$(document).ready(function(){
+$('#start_project').datepicker({
+ format: "dd/mm/yyyy"
+}); 
+$('#end_project').datepicker({
+ format: "dd/mm/yyyy"
+}); 
+});
+
+
+
+$(document).ready(function(){
+$('#document_date').datepicker({
+ format: "dd/mm/yyyy"
+}); 
+$('#received_on').datepicker({
+ format: "dd/mm/yyyy"
+}); 
+$('#date_time').datepicker({
+ format: "dd/mm/yyyy"
+}); 
+});
+
+$(document).ready(function(){
+$('#date_birth').datepicker({
+ format: "dd/mm/yyyy"
+}); 
+});

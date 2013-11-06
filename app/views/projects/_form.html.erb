@@ -42,14 +42,14 @@
   <div class="form-group">
     <%= f.label :start_at, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.date_select :start_at, :class => 'form-control' %>
+      <%= f.text_field :start_at, :placeholder =>"select start date", :id =>"start_project", :class =>'form-control'%>
     </div>
   </div>
 
-  <div class="form-group dater">
+  <div class="form-group">
     <%= f.label :end_at, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-2">
-      <%= f.text_field :type="text" :data-behavior='datepicker' %>
+    <%= f.text_field :end_at, :placeholder =>"select end date", :id =>"end_project", :class =>'form-control'%>
 
    </div>
   </div>

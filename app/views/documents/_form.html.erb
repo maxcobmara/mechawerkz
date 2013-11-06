@@ -50,7 +50,7 @@
   <div class="form-group">
     <%= f.label :document_date, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.date_select :document_date, :class => 'form-control' %>
+      <%= f.text_field :document_date, :placeholder =>"select document date", :id => "document_date", :class => 'form-control' %>
     </div>
   </div>
 
@@ -64,7 +64,7 @@
   <div class="form-group">
     <%= f.label :received_on, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.date_select :received_on, :class => 'form-control' %>
+      <%= f.text_field :received_on, :placeholder =>"select receive on date", :id =>"received_on", :class => 'form-control' %>
     </div>
   </div>
 
@@ -122,7 +122,7 @@
   <div class="form-group">
     <%= f.label :document_updated_at, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-6">
-      <%= f.datetime_select :document_updated_at, :class => 'form-control' %>
+      <%= f.text_field :document_updated_at, :placeholder =>"select date and time update", :id => "date_time", :class => 'form-control' %>
     </div>
   </div>
 
