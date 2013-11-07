@@ -1,0 +1,62 @@
+<%= form_for @bill, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @bill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+      <% @bill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :project_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :project_id, :class =>'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pay_to, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :pay_to, :class =>'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :document_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :document_id, :class =>'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :category_id, :class =>'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company_id, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.number_field :company_id, :class =>'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :amount, :class => 'col-lg-2 control-label' %>
+	<div class="col-lg-6">
+    <%= f.text_field :amount, :class =>'form-control' %>
+  </div>
+  </div>
+
+
+ <div class="form-actions">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => "btn btn-primary" %>
+    </div>
+
+<% end %>

@@ -1,5 +1,7 @@
 Mechawerkz::Application.routes.draw do
   
+  resources :bills
+
   resources :projects
 
   resources :documents
