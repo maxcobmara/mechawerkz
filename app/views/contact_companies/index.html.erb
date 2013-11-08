@@ -7,9 +7,9 @@
       <th>Address</th>
       <th>Postcode</th>
       <th>State</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Status</th>
+      
+      
     </tr>
   </thead>
 
@@ -20,10 +20,8 @@
         <td><%= contact_company.address %></td>
         <td><%= contact_company.postcode %></td>
         <td><%= contact_company.state %></td>
-	<div class="btn-group">
-        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', contact_company %></td>
-        <td><button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_contact_company_path(contact_company) %></td>
-        <td><button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', contact_company, method: :delete, data: { confirm: 'Are you sure?' } %></td></div>
+	<%= render :partial => 'action_menu', :locals => { :contact_company => contact_company }%>
+	
       </tr>
     <% end %>
   </tbody>

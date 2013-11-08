@@ -9,9 +9,8 @@
       <th> Person Name </td>
       <th>Tasks Main</th>
      
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Status</th>
+    
     </tr>
   </thead>
 
@@ -23,13 +22,9 @@
         <td><%= staff_position.name %></td>
        <td> name</td>
        <td><%= staff_position.tasks_main %></td>
+<%= render :partial => 'action_menu', :locals => { :staff_position => staff_position }%> 
       
-	<div class="btn-group">
-        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', staff_position %></td>
-
-        <td><button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_staff_position_path(staff_position) %></td>
-
-        <td><button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', staff_position, method: :delete, data: { confirm: 'Are you sure?' } %></td></div>
+	
       </tr>
     <% end %>
   </tbody>

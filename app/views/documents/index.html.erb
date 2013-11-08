@@ -9,9 +9,8 @@
       <th>Recieved from</th>
 
       <th>Filed by</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Status</th>
+      
     </tr>
   </thead>
 
@@ -24,10 +23,9 @@
         <td><%= document.recieved_from %></td>
       
         <td><%= document.filed_by %></td>
+	<%= render :partial => 'action_menu', :locals => { :document => document }%>
        
-        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', document %></td>
-       <td><button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_document_path(document) %></td>
-       <td><button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>

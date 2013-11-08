@@ -6,9 +6,8 @@
       <th>Name</th>
       <th>Company</th>
       <th>Position</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th> Status</th>
+      
     </tr>
   </thead>
 
@@ -18,11 +17,8 @@
         <td><%= contact_person.name %></td>
         <td><%= contact_person.company_id %></td>
         <td><%= contact_person.position %></td>
+ <%= render :partial => 'action_menu', :locals => { :contact_person => contact_person }%> 
 
-	<div class="btn-group">
-        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', contact_person %></td>
-        <td><button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_contact_person_path(contact_person) %></td>
-        <td><button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', contact_person, method: :delete, data: { confirm: 'Are you sure?' } %></td><div>
       </tr>
     <% end %>
   </tbody>
