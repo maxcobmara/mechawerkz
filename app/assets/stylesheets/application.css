@@ -10,6 +10,7 @@
  *
  *= require twitter/bootstrap
  *= require bootstrap-datepicker
+ *= require bootstrap-datetimepicker
  *= require_self
  *= require_tree .
  */

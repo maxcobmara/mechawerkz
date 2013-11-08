@@ -1,0 +1,18 @@
+<td>
+                <div class="btn-group dropdown">
+                        <!--<button class="btn"></button>-->
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                                
+         <li><%= link_to content_tag(:i, "", :class => "icon-eye-open") + "   " + t('.edit', :default => t("helpers.links.edit")), edit_travel_request_path(travel_request) %></li>
+                                <li><%= link_to content_tag(:i, "", :class => "icon-edit") + "   View", travel_request %></li>
+                                <li class="divider"></li>
+                                <li class="danger"><%= link_to link_to content_tag(:i, "", :class => "icon-trash") + "   " + t('.destroy', :default => t("helpers.links.destroy")),
+                    travel_request,
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }%> </li>
+                        </ul>
+                </div>
+</td>

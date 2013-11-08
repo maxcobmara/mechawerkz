@@ -1,0 +1,1 @@
+json.extract! @travel_request, :staff_id, :document_id, :depart_at, :return_at, :own_car, :project_id, :company_id, :contact_person_id, :is_submitted, :submitted_on, :is_approved, :approved_by, :approved_on, :created_at, :updated_at

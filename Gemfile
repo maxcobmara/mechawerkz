@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 1.2'  # Build JSON APIs with ease. Read more: https://github
 gem "haml", "~> 4.0.3"
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'bootstrap-datetimepicker-rails'
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

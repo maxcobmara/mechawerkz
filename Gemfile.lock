@@ -37,6 +37,7 @@ GEM
     arel (4.0.0)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    bootstrap-datetimepicker-rails (0.0.11)
     bootstrap-sass-rails (3.0.0.3)
       railties (>= 3.1.0)
       sass-rails (>= 3.1.0)
@@ -214,6 +215,7 @@ PLATFORMS
 DEPENDENCIES
   ancestry (~> 2.0.0)
   bootstrap-datepicker-rails!
+  bootstrap-datetimepicker-rails
   bootstrap-sass-rails (~> 3.0.0.2)
   capybara (~> 2.1.0)
   coffee-rails (~> 4.0.0)
