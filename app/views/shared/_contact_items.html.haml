@@ -2,7 +2,7 @@
   .form-inline
     .form-group
       = f.label :medium_type, :class => 'sr-only'
-      = f.collection_select :medium_type, ContactMediumType.find(:all), :id, :include_blank=> 'Select medium type', :class => 'form-control' 
+      = f.collection_select :medium_type, ContactMediumType.find(:all), :id, :description, :include_blank=> 'Select medium type', :class => 'form-control' 
     .form-group
       = f.label :medium, :class => 'sr-only'
       = f.text_field :medium, :class => 'form-control', :placeholder => "Contact Info"

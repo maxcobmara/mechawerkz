@@ -1,5 +1,13 @@
 Mechawerkz::Application.routes.draw do
   
+  resources :travel_requests
+
+  resources :bills
+
+  resources :projects
+
+  resources :documents
+
   resources :document_binders
 
   resources :staff_positions

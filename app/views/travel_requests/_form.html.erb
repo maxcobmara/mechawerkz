@@ -1,0 +1,110 @@
+<%= form_for @travel_request, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @travel_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@travel_request.errors.count, "error") %> prohibited this travel_request from being saved:</h2>
+
+      <ul>
+      <% @travel_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+    <%= f.label :staff_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :staff_id, :class => 'form-control' %>
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <%= f.label :document_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :document_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :depart_at, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.datetime_select :depart_at, :class => 'form-control' %>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :return_at, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.datetime_select :return_at, :class => 'form-control' %>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :own_car, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.check_box :own_car, :class => 'form-control' %>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :project_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :project_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :company_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :contact_person_id, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :contact_person_id, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :is_submitted, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.check_box :is_submitted, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :submitted_on, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :submitted_on, :placeholder =>"select submitted date", :id =>"submitted_on", :class =>'form-control'%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :is_approved, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.check_box :is_approved, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :approved_by, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.number_field :approved_by, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :approved_on, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-6">
+      <%= f.text_field :approved_on, :placeholder =>"select approved date", :id =>"approved_on", :class =>'form-control'%>
+    </div>
+  </div>
+
+
+<div class="form-actions">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => "btn btn-primary" %>
+    </div>
+
+<% end %>

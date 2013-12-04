@@ -1,0 +1,36 @@
+<h1>Listing Travel Requests</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Staff</th>
+      <th>Document</th>
+      <th>Depart at</th>
+      <th>Return at</th>
+      <th>Is submitted</th>
+      <th>Is approved</th>
+      <th>Status</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @travel_requests.each do |travel_request| %>
+      <tr>
+        <td><%= travel_request.staff_id %></td>
+        <td><%= travel_request.document_id %></td>
+        <td><%= travel_request.depart_at %></td>
+        <td><%= travel_request.return_at %></td>
+        <td><%= travel_request.is_submitted %></td> 
+        <td><%= travel_request.is_approved %></td>
+        <%= render :partial => 'action_menu', :locals => { :travel_request => travel_request }%>
+        
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Travel request', new_travel_request_path %>

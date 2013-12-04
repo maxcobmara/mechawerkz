@@ -8,9 +8,8 @@
         <th>IC No</th>
        <th>Date Of Birth</th>
       <th>Gender</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Status</th>
+      
     </tr>
   </thead>
 
@@ -23,10 +22,8 @@
         <td><%= staff.date_of_birth %></td>
          <td><%= staff.gender %></td>
 
-	<div class="btn-group">
-        <td><button type="button" class="btn btn-success btn-sm"><%= link_to 'Show', staff %></td>
-        <td><button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_staff_path(staff) %></td>
-       <td><button type="button" class="btn btn-danger btn-sm"><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%= render :partial => 'action_menu', :locals => { :staff => staff }%>
+
       </tr>
     <% end %>
   </tbody>

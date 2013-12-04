@@ -1,0 +1,36 @@
+<% provide(:title, 'Bill Details') %>
+<%- model_class = Bill -%>
+<div class="page-header">
+   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<dl class="dl-horizontal">
+
+  <dt><strong><%= model_class.human_attribute_name(:project) %>:</strong></dt>
+  <dd><%= @bill.project_id %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:pay_to) %>:</strong></dt>
+  <dd><%= @bill.pay_to %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:document) %>:</strong></dt>
+  <dd><%= @bill.document_id %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dd><%= @bill.category_id %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:company) %>:</strong></dt>
+  <dd><%= @bill.company_id %></dd>
+
+
+  <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
+  <dd><%= @bill.amount %></dd>
+
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>
